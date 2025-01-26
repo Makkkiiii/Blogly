@@ -10,7 +10,7 @@ Softwarica College of IT and E-Commerce
 
 Introduction to Web Development and Database Systems - **Lecturer**: Dhirendra Bhatta
 
-Gym Management System - 6th January (2nd Semester)
+Blogly (Blog Web Application) - 6th January (2nd Semester)
 
 ## About
 
@@ -79,7 +79,7 @@ git clone https://github.com/Makkkiiii/Blogly.git
 Go to the directory where the folder was cloned.
 
 ```
-cd AreaFitness
+cd Blogly
 ```
 
 ## 3. FOR MAC
