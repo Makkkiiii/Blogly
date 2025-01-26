@@ -1,4 +1,4 @@
-# Gym Management System
+# Blog Web Application
 
 ![Business (32)](https://github.com/user-attachments/assets/36c84798-7c9e-4a12-b18b-9690b16fd9ba)
 
