@@ -10,7 +10,7 @@ Softwarica College of IT and E-Commerce
 
 Introduction to Web Development and Database Systems - **Lecturer**: Dhirendra Bhatta
 
-Blogly (Blog Web Application) - 6th January (2nd Semester)
+Blogly - 6th January (2nd Semester)
 
 ## About
 
