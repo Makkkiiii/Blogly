@@ -45,14 +45,17 @@
         <div class="contact_form">
             <form action="submit_contact_form.php" method="post">
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" placeholder="Full Name" required>
 
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" placeholder="Valid Email" required>
 
                 <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
+                <div class="textarea-container">
+                    <textarea id="message" name="message" placeholder="Your Message" required
+                        maxlength="100"></textarea>
+                    <div id="wordCount" class="wordCount">0/100</div>
+                </div>
                 <button type="submit">Send Message</button>
             </form>
         </div>
@@ -81,7 +84,6 @@
             <small>Copyright &copy; 2025 Denish Maharjan </small>
         </div>
     </footer>
-
     <script src="/Blogly/JS/script.js"></script>
 </body>
 
