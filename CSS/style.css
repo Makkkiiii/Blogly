@@ -1,3 +1,4 @@
+/* ====================== ALL THE CSS FOR BACKEND AND FRONTEND */
 :root {
   --color-primary: #6f6af8;
   --color-primary-light: hsl(242, 91%, 69%, 18%);
@@ -145,6 +146,29 @@ nav button {
   display: flex;
   align-items: center;
   gap: 4rem;
+}
+
+.nav_items li a {
+  position: relative;
+}
+
+.nav_items li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: var(--color-white);
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+}
+
+.nav_items li a:hover::after {
+  width: 100%;
+  left: 0;
+  background: var(--color-white);
 }
 
 .nav_profile {
@@ -567,6 +591,190 @@ footer ul a:hover {
     background: transparent;
     padding: 0;
   }
+}
+
+/*  PAGES */
+
+.empty_page {
+  height: 70vh;
+  text-align: center;
+  display: grid;
+  place-content: center;
+}
+
+.contact_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 0;
+  color: var(--color-gray-200);
+}
+
+.contact_page h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-white);
+}
+
+.contact_form {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--color-gray-900);
+  padding: 2rem;
+  border-radius: var(--card-border-radius-2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact_form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact_form label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: var(--color-white);
+}
+
+.contact_form input,
+.contact_form textarea {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  border: 1px solid var(--color-gray-700);
+  border-radius: var(--card-border-radius-1);
+  font-size: 1rem;
+  background: var(--color-bg);
+  color: var(--color-white);
+}
+
+.contact_form button {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--card-border-radius-2);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.contact_form button:hover {
+  background-color: var(--color-primary-variant);
+}
+
+.services_page {
+  padding: 4rem 2rem;
+  margin: 4rem auto;
+  color: var(--color-gray-200);
+  background: var(--color-gray-900);
+  border-radius: var(--card-border-radius-3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.services_page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.services_content {
+  padding: 2rem 3rem;
+}
+
+.services_content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.services_content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services_content ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.services_content ul li i {
+  font-size: 1.8rem;
+  margin-right: 1rem;
+  color: var(--color-primary);
+}
+
+.services_content ul li strong {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+  color: var(--color-white);
+}
+
+.about_page {
+  padding: 4rem;
+  background-color: var(--color-bg);
+  border-radius: var(--card-border-radius-3);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 4rem auto;
+  color: var(--color-gray-200);
+  max-width: 80%;
+}
+
+.about_page h1 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.about_content {
+  padding: 2rem;
+  background-color: var(--color-gray-900);
+  border-radius: var(--card-border-radius-2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.about_highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.highlight {
+  flex: 1 1 calc(50% - 2rem);
+  background-color: var(--color-gray-700);
+  padding: 2rem;
+  border-radius: var(--card-border-radius-2);
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: var(--color-white);
+}
+
+.highlight i {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.highlight h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.highlight p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.about_content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  color: var(--color-gray-200);
 }
 
 /* ======================BLOG PAGE CSS================== */

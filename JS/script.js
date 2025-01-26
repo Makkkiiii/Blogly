@@ -1,3 +1,4 @@
+// ========================== ALL THE SCRIPT FOR BACKEND AND FRONTEND =======================
 const navItems = document.querySelector(".nav_items");
 const openNavBtn = document.querySelector("#open_nav-btn");
 const closeNavBtn = document.querySelector("#close_nav-btn");
