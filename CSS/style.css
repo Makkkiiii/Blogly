@@ -384,6 +384,24 @@ footer ul a:hover {
 
 /* MEDIA QUERIES */
 
+/* NAV ITEMS */
+
+@media screen and (max-width: 1024px) {
+  .nav_items {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .nav_items {
+    flex-direction: column;
+    gap: 2rem;
+    display: none;
+  }
+}
+/* END OF NAV ITEMS MEDIA QUERIES */
+
 @media screen and (max-width: 1024px) {
   .container {
     width: var(--container-width-md);
