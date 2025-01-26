@@ -362,6 +362,107 @@ footer ul a:hover {
   text-shadow: 0 0 10px var(--color-primary);
 }
 
+.footer_map {
+  flex: 1;
+  padding: 20px;
+  background-color: var(--color-gray-900);
+  border-radius: var(--card-border-radius-2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.footer_map:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.footer_map h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--color-white);
+  position: relative;
+}
+
+.footer_map h2::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  left: 50%;
+  background: var(--color-primary);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.footer_map h2:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.footer_map iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  border-radius: var(--card-border-radius-2);
+}
+
+.footer_contact {
+  flex: 1;
+  padding: 20px;
+  background-color: var(--color-gray-900);
+  border-radius: var(--card-border-radius-2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.footer_contact:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.footer_contact h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--color-white);
+  position: relative;
+}
+
+.footer_contact h2::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  left: 50%;
+  background: var(--color-primary);
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.footer_contact h2:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.footer_contact p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray-200);
+}
+
+.footer_contact p i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: var(--color-primary);
+}
+
 /* SINGLE POSTS */
 
 .singlepost {
@@ -629,9 +730,8 @@ footer ul a:hover {
 }
 
 .contact_page h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 2rem;
-  text-align: center;
   color: var(--color-white);
 }
 
