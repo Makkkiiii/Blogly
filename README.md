@@ -2,7 +2,6 @@
 
 ![Bloglyy](https://github.com/user-attachments/assets/f7e03167-0278-4592-9957-ceee138d3cb6)
 
-
 ## Overview
 
 Softwarica College of IT and E-Commerce
@@ -72,7 +71,7 @@ The **Blogly** Web Application is designed to simplify blogging by managing post
 ### 1. Clone the repository:
 
 ```
-git clone https://github.com/Makkkiiii/Blogly.git
+git clone https://github.com/Makkkiiii/Denish_Maharjan_CW1_Blogly.git
 ```
 
 ### 2. Navigating
@@ -80,7 +79,7 @@ git clone https://github.com/Makkkiiii/Blogly.git
 Go to the directory where the folder was cloned.
 
 ```
-cd Blogly
+cd Denish_Maharjan_CW1_Blogly
 ```
 
 ## 3. FOR MAC
