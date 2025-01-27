@@ -179,7 +179,7 @@ nav button {
 
 .nav_profile ul {
   position: absolute;
-  top: 125%;
+  top: 140%;
   right: 0;
   display: flex;
   flex-direction: column;
@@ -649,7 +649,7 @@ footer ul a:hover {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
   }
-  .search_bar-container {
+  .search_input-container {
     width: 60%;
   }
 
@@ -759,7 +759,7 @@ footer ul a:hover {
     grid-template-columns: 1fr 1fr;
   }
 
-  .search_bar-container {
+  .search_input-container {
     width: var(--container-width-md);
   }
 
@@ -1349,6 +1349,7 @@ input[type="file"]::file-selector-button:hover {
   background-color: var(--color-gray-700);
   border-radius: 4px;
   padding: 0.5rem;
+  flex-direction: row;
 }
 
 .search_icon {
