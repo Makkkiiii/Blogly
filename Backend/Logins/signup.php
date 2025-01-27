@@ -13,6 +13,10 @@ $email = $_SESSION['signup-data']['email'] ?? null;
 $createpassword = $_SESSION['signup-data']['createpassword'] ?? null;
 $confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
 
+
+// ! DELETE SESSION DATA
+unset($_SESSION['signup-data']);
+
 ?>
 
 
@@ -42,14 +46,15 @@ $confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
                 Sign Up
             </h2>
             <?php
-            if (isset($_SESSION['signup'])) : ?>
-                <div class="alert_message error">
-                    <p>
-                        <?= $_SESSION['signup'];
-                        unset($_SESSION['signup']);
-                        ?>
-                    </p>
-
+            // ! DISPLAY SIGN UP ERROR MESSAGE
+            if (isset($_SESSION['signup'])) :
+                $message = $_SESSION['signup'];
+                $messageType = $_SESSION['signup-type'] ?? 'error';
+                unset($_SESSION['signup']);
+                unset($_SESSION['signup-type']);
+            ?>
+                <div class="alert_message <?= $messageType ?>">
+                    <p><?= $message; ?></p>
                 </div>
             <?php endif; ?>
 
@@ -59,7 +64,8 @@ $confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
                 <input type="text" name="username" value="<?= $username ?>" placeholder="Username">
                 <input type="email" name="email" value="<?= $email ?>" placeholder="Email">
                 <input type="password" name="createpassword" value="<?= $createpassword ?>" placeholder="Create Password">
-                <input type="password" name="confirmpassword" value=" <?= $confirmpassword ?>" placeholder="Confirm Password">
+                <input type="password" name="confirmpassword" value="<?= $confirmpassword ?>" placeholder="Confirm Password">
+
                 <div class="form_control">
                     <label for="avatar">Profile Picture</label>
                     <input type="file" placeholder="Add Photo" name="avatar" id="avatar">

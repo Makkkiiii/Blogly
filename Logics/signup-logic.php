@@ -90,16 +90,20 @@ if (isset($_POST['submit'])) {
         die();
     } else {
         // ! INSERT USER INTO DATABASE
-        $insert_user_query = "INSERT INTO users (firstname, lastname, username, email, password, avatar, is_admin) VALUES ('$firstname', '$lastname', '$username', '$email', '$hashed_password', '$avatar_name',0)";
-        $result = mysqli_query($conn, $insert_user_query);
+        $insert_user_query = "INSERT INTO users (firstname, lastname, username, email, password, avatar, is_admin) VALUES (?, ?, ?, ?, ?, ?, 0)";
+        $stmt = mysqli_prepare($conn, $insert_user_query);
+        mysqli_stmt_bind_param($stmt, 'ssssss', $firstname, $lastname, $username, $email, $hashed_password, $avatar_name);
+        $result = mysqli_stmt_execute($stmt);
         if ($result) {
-            $_SESSION['signup'] = "You have successfully signed up.";
-            header('location: ' . SIGNUP);
-            die();
+            $_SESSION['signup'] = "Registration successful! You can now log in.";
+            $_SESSION['signup-type'] = "success";
         } else {
-            $_SESSION['signup'] = "Failed to sign up.";
-            header('location: ' . SIGNUP);
+            $_SESSION['signup'] = "Something went wrong. Please try again.";
+            $_SESSION['signup-type'] = "error";
         }
+
+        header('location: ' . SIGNUP);
+        exit();
     }
 } else {
     // ! IF THE USER DID NOT CLICK THE SIGN UP BUTTON
