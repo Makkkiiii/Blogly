@@ -21,17 +21,17 @@ require '/Xampp/htdocs/Blogly/Config/database.php';
             <a href="index.php" class="nav_logo">
                 <img src="/Blogly/assets/BloglyIcon.png" alt="logo_icon">Blogly</a>
             <ul class="nav_items">
-                <li><a href="blog.php">Blog</a></li>
-                <li><a href="about.php">About</a></li>
-                <li><a href="services.php">Services</a></li>
-                <li><a href="contact.php">Contact</a></li>
+                <li><a href="<?= Frontend ?>blog.php">Blog</a></li>
+                <li><a href="<?= Frontend ?>about.php">About</a></li>
+                <li><a href="<?= Frontend ?>services.php">Services</a></li>
+                <li><a href="<?= Frontend ?>contact.php">Contact</a></li>
                 <!-- <li><a href="signin.html">Sign In</a></li> -->
                 <li class="nav_profile">
                     <div class="avatar">
                         <img src="/Blogly/assets/avatar1.jpg">
                     </div>
                     <ul>
-                        <li><a href="/Blogly/Backend/dashboard.html">Dashboard</a></li>
+                        <li><a href="<?= Backend ?>dashboard.php">Dashboard</a></li>
                         <li><a href="logout.html">Logout</a></li>
                     </ul>
                 </li>
