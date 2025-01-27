@@ -18,7 +18,7 @@ require '/Xampp/htdocs/Blogly/Config/database.php';
 <body>
     <nav>
         <div class="container nav_container">
-            <a href="index.php" class="nav_logo">
+            <a href="<?= Frontend ?>" class="nav_logo">
                 <img src="/Blogly/assets/BloglyIcon.png" alt="logo_icon">Blogly</a>
             <ul class="nav_items">
                 <li><a href="<?= Frontend ?>blog.php">Blog</a></li>
@@ -42,6 +42,3 @@ require '/Xampp/htdocs/Blogly/Config/database.php';
     </nav>
     <!-- END OF NAV -->
     <script src="/Blogly/JS/script.js"></script>
-</body>
-
-</html>
