@@ -1,3 +1,21 @@
+<?php
+
+session_start();
+
+require '/Xampp/htdocs/Blogly/Config/constants.php';
+
+// ! GET BACK FORM DATA IF THERE WAS A REGISTRATION ERROR
+
+$firstname = $_SESSION['signup-data']['firstname'] ?? null;
+$lastname = $_SESSION['signup-data']['lastname'] ?? null;
+$username = $_SESSION['signup-data']['username'] ?? null;
+$email = $_SESSION['signup-data']['email'] ?? null;
+$createpassword = $_SESSION['signup-data']['createpassword'] ?? null;
+$confirmpassword = $_SESSION['signup-data']['confirmpassword'] ?? null;
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +33,7 @@
 <body>
     <nav>
         <div class="container nav_container">
-            <a href="/Blogly/Frontend/index.html" class="nav_logo">
+            <a href="/Blogly/Frontend/index.php" class="nav_logo">
                 <img src="/Blogly/assets/BloglyIcon.png" alt="logo_icon">Blogly</a>
     </nav>
     <section class="form_section">
@@ -23,21 +41,30 @@
             <h2>
                 Sign Up
             </h2>
-            <div class="alert_message error">
-                <p>This is an error message.</p>
-            </div>
-            <form action="" enctype="multipart/form-data">
-                <input type="text" placeholder="First Name">
-                <input type="text" placeholder="Last Name">
-                <input type="text" placeholder="Username">
-                <input type="email" placeholder="Email">
-                <input type="password" placeholder="Create Password">
-                <input type="password" placeholder="Confirm Password">
+            <?php
+            if (isset($_SESSION['signup'])) : ?>
+                <div class="alert_message error">
+                    <p>
+                        <?= $_SESSION['signup'];
+                        unset($_SESSION['signup']);
+                        ?>
+                    </p>
+
+                </div>
+            <?php endif; ?>
+
+            <form action="<?= LOGICS ?>signup-logic.php" enctype="multipart/form-data" method="POST">
+                <input type="text" name="firstname" value="<?= $firstname ?>" placeholder="First Name">
+                <input type="text" name="lastname" value="<?= $lastname ?>" placeholder="Last Name">
+                <input type="text" name="username" value="<?= $username ?>" placeholder="Username">
+                <input type="email" name="email" value="<?= $email ?>" placeholder="Email">
+                <input type="password" name="createpassword" value="<?= $createpassword ?>" placeholder="Create Password">
+                <input type="password" name="confirmpassword" value=" <?= $confirmpassword ?>" placeholder="Confirm Password">
                 <div class="form_control">
                     <label for="avatar">Profile Picture</label>
-                    <input type="file" placeholder="Add Photo" id="avatar">
+                    <input type="file" placeholder="Add Photo" name="avatar" id="avatar">
                 </div>
-                <button type="submit" class="btn">Sign Up</button>
+                <button type="submit" name="submit" class="btn">Sign Up</button>
                 <small>Already have an account? <a href="signin.php">Sign In</a></small>
             </form>
         </div>

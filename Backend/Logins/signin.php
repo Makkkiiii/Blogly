@@ -15,7 +15,7 @@
 <body>
     <nav>
         <div class="container nav_container">
-            <a href="/Blogly/Frontend/index.html" class="nav_logo">
+            <a href="/Blogly/Frontend/index.php" class="nav_logo">
                 <img src="/Blogly/assets/BloglyIcon.png" alt="logo_icon">Blogly</a>
     </nav>
     <section class="form_section">
