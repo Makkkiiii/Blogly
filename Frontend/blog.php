@@ -20,7 +20,7 @@ include '/Xampp/htdocs/Blogly/Partials/header.php';
             <div class="post_info">
                 <a href="" class="category_button">Wild life</a>
                 <h3 class="post_title">
-                    <a href="post.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+                    <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
                         perspiciatis aspernatur tempora labore natus in, maiores quae ad officiis provident optio
                         aliquam. Quo alias cum sed, nam a libero eaque?</a>
                 </h3>
@@ -46,7 +46,7 @@ include '/Xampp/htdocs/Blogly/Partials/header.php';
             <div class="post_info">
                 <a href="" class="category_button">Wild life</a>
                 <h3 class="post_title">
-                    <a href="post.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+                    <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
                         perspiciatis aspernatur tempora labore natus in, maiores quae ad officiis provident optio
                         aliquam. Quo alias cum sed, nam a libero eaque?</a>
                 </h3>
@@ -72,7 +72,7 @@ include '/Xampp/htdocs/Blogly/Partials/header.php';
             <div class="post_info">
                 <a href="" class="category_button">Wild life</a>
                 <h3 class="post_title">
-                    <a href="post.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+                    <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
                         perspiciatis aspernatur tempora labore natus in, maiores quae ad officiis provident optio
                         aliquam. Quo alias cum sed, nam a libero eaque?</a>
                 </h3>
@@ -97,7 +97,7 @@ include '/Xampp/htdocs/Blogly/Partials/header.php';
             <div class="post_info">
                 <a href="" class="category_button">Wild life</a>
                 <h3 class="post_title">
-                    <a href="post.html">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
+                    <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
                         perspiciatis aspernatur tempora labore natus in, maiores quae ad officiis provident optio
                         aliquam. Quo alias cum sed, nam a libero eaque?</a>
                 </h3>

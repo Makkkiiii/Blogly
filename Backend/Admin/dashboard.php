@@ -66,20 +66,20 @@ require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
                     <tr>
                         <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
                         <td>Wildlife</td>
-                        <td><a href="edit-post.html" class="btn sm">Edit</a></td>
-                        <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        <td><a href="<?= Backend ?>edit-post.php" class="btn sm">Edit</a></td>
+                        <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
                     </tr>
                     <tr>
                         <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
                         <td>Food</td>
-                        <td><a href="edit-post.html" class="btn sm">Edit</a></td>
-                        <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        <td><a href="<?= Backend ?>edit-post.php" class="btn sm">Edit</a></td>
+                        <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
                     </tr>
                     <tr>
                         <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</td>
                         <td>Photography</td>
-                        <td><a href="edit-post.html" class="btn sm">Edit</a></td>
-                        <td><a href="delete-category.html" class="btn sm danger">Delete</a></td>
+                        <td><a href="<?= Backend ?>edit-post.php" class="btn sm">Edit</a></td>
+                        <td><a href="delete-category.php" class="btn sm danger">Delete</a></td>
                     </tr>
 
                 </tbody>

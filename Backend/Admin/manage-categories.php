@@ -11,37 +11,37 @@ require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
         <aside>
             <ul>
                 <li>
-                    <a href="add-post.html">
+                    <a href="<?= Backend ?>add-post.php">
                         <i class="uil uil-pen"></i>
                         <h5>Add Post</h5>
                     </a>
                 </li>
                 <li>
-                    <a href="add-user.html">
+                    <a href="<?= Backend ?>add-user.php">
                         <i class="uil uil-user-plus"></i>
                         <h5>Add user</h5>
                     </a>
                 </li>
                 <li>
-                    <a href="add-category.html">
+                    <a href="<?= Backend ?>add-category.php">
                         <i class="uil uil-edit"></i>
                         <h5>Add Category</h5>
                     </a>
                 </li>
                 <li>
-                    <a href="manage-users.html">
+                    <a href="<?= Backend ?>manage-users.php">
                         <i class="uil uil-users-alt"></i>
                         <h5>Manage Users</h5>
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard.html">
+                    <a href="<?= Backend ?>dashboard.php">
                         <i class="uil uil-setting"></i>
                         <h5>Manage Posts</h5>
                     </a>
                 </li>
                 <li>
-                    <a href="manage-categories.html" class="active">
+                    <a href="<?= Backend ?>manage-categories.php" class="active">
                         <i class="uil uil-sliders-v-alt"></i>
                         <h5>Manage Category</h5>
                     </a>
@@ -62,18 +62,18 @@ require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
                 <tbody>
                     <tr>
                         <td>Travel</td>
-                        <td><a href="edit-category.html" class="btn sm">Edit</a></td>
-                        <td><a href="edit-category.html" class="btn sm danger">Delete</a></td>
+                        <td><a href="<?= Backend ?>edit-category.php" class="btn sm">Edit</a></td>
+                        <td><a href="<?= Backend ?>edit-category.php" class="btn sm danger">Delete</a></td>
                     </tr>
                     <tr>
                         <td>Wildlife</td>
-                        <td><a href="edit-category.html" class="btn sm">Edit</a></td>
-                        <td><a href="edit-category.html" class="btn sm danger">Delete</a></td>
+                        <td><a href="<?= Backend ?>edit-category.php" class="btn sm">Edit</a></td>
+                        <td><a href="<?= Backend ?>edit-category.php" class="btn sm danger">Delete</a></td>
                     </tr>
                     <tr>
                         <td>Food</td>
-                        <td><a href="edit-category.html" class="btn sm">Edit</a></td>
-                        <td><a href="edit-category.html" class="btn sm danger">Delete</a></td>
+                        <td><a href="<?= Backend ?>edit-category.php" class="btn sm">Edit</a></td>
+                        <td><a href="<?= Backend ?>edit-category.php" class="btn sm danger">Delete</a></td>
                     </tr>
                 </tbody>
             </table>
