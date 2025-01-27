@@ -34,7 +34,7 @@ require 'Config/database.php';
                     </div>
                     <ul>
                         <li><a href="<?= Backend ?>dashboard.php">Dashboard</a></li>
-                        <li><a href="logout.html">Logout</a></li>
+                        <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </li>
             </ul>

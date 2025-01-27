@@ -13,9 +13,9 @@ include '/Xampp/htdocs/Blogly/Partials/header.php';
             <img src="/Blogly/assets/blog1.jpg">
         </div>
         <div class="post_info">
-            <a href="/Blogly/Backend/category-post.php" class="category_button">Wildlife</a>
+            <a href="<?= Frontend ?>category-post.php" class="category_button">Wildlife</a>
             <h2 class="post_title">
-                <a href="post.php">The beauty of the wildlife</a>
+                <a href="<?= Frontend ?>post.php">The beauty of the wildlife</a>
             </h2>
             <p class="post_body">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Quisquam,
@@ -41,7 +41,7 @@ include '/Xampp/htdocs/Blogly/Partials/header.php';
                 <img src="/Blogly/assets/blog3.jpg">
             </div>
             <div class="post_info">
-                <a href="/Blogly/Backend/category-post.php" class="category_button">Wild life</a>
+                <a href="<?= Frontend ?>category-post.php" class="category_button">Wild life</a>
                 <h3 class="post_title">
                     <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
                         perspiciatis aspernatur tempora labore natus in, maiores quae ad officiis provident optio
@@ -67,7 +67,7 @@ include '/Xampp/htdocs/Blogly/Partials/header.php';
                 <img src="/Blogly/assets/blog7.jpg">
             </div>
             <div class="post_info">
-                <a href="/Blogly/Backend/category-post.php" class="category_button">Wild life</a>
+                <a href="<?= Frontend ?>category-post.php" class="category_button">Wild life</a>
                 <h3 class="post_title">
                     <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
                         perspiciatis aspernatur tempora labore natus in, maiores quae ad officiis provident optio
@@ -93,7 +93,7 @@ include '/Xampp/htdocs/Blogly/Partials/header.php';
                 <img src="/Blogly/assets/blog5.jpg">
             </div>
             <div class="post_info">
-                <a href="/Blogly/Backend/category-post.php" class="category_button">Wild life</a>
+                <a href="<?= Frontend ?>category-post.php" class="category_button">Wild life</a>
                 <h3 class="post_title">
                     <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
                         perspiciatis aspernatur tempora labore natus in, maiores quae ad officiis provident optio
@@ -118,7 +118,7 @@ include '/Xampp/htdocs/Blogly/Partials/header.php';
                 <img src="/Blogly/assets/blog8.jpg">
             </div>
             <div class="post_info">
-                <a href="/Blogly/Backend/category-post.php" class="category_button">Wild life</a>
+                <a href="<?= Frontend ?>category-post.php" class="category_button">Wild life</a>
                 <h3 class="post_title">
                     <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
                         perspiciatis aspernatur tempora labore natus in, maiores quae ad officiis provident optio
@@ -144,15 +144,15 @@ include '/Xampp/htdocs/Blogly/Partials/header.php';
 <!-- END OF POSTS -->
 <section class="category_buttons">
     <div class="container category_buttons-container">
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Wildlife</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Travel</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Photography</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Lifestyle</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Fashion</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Food</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Technology</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Business</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Sports</a>
+        <a href="<?= Frontend ?>category-post.php" class="category_button">Wildlife</a>
+        <a href="<?= Frontend ?>category-post.php" class="category_button">Travel</a>
+        <a href="<?= Frontend ?>category-post.php" class="category_button">Photography</a>
+        <a href="<?= Frontend ?>category-post.php" class="category_button">Lifestyle</a>
+        <a href="<?= Frontend ?>category-post.php" class="category_button">Fashion</a>
+        <a href="<?= Frontend ?>category-post.php" class="category_button">Food</a>
+        <a href="<?= Frontend ?>category-post.php" class="category_button">Technology</a>
+        <a href="<?= Frontend ?>category-post.php" class="category_button">Business</a>
+        <a href="<?= Frontend ?>category-post.php" class="category_button">Sports</a>
     </div>
 </section>
 <!-- END OF CATEGORY -->

@@ -10,15 +10,15 @@
         <article>
             <h4>Categories</h4>
             <ul>
-                <li><a href="/Blogly/Backend/category-post.html">Wildlife</a></li>
-                <li><a href="/Blogly/Backend/category-post.html">Travel</a></li>
-                <li><a href="/Blogly/Backend/category-post.html">Photography</a></li>
-                <li><a href="/Blogly/Backend/category-post.html">Lifestyle</a></li>
-                <li><a href="/Blogly/Backend/category-post.html">Fashion</a></li>
-                <li><a href="/Blogly/Backend/category-post.html">Food</a></li>
-                <li><a href="/Blogly/Backend/category-post.html">Technology</a></li>
-                <li><a href="/Blogly/Backend/category-post.html">Business</a></li>
-                <li><a href="/Blogly/Backend/category-post.html">Sports</a></li>
+                <li><a href="<?= Frontend ?>category-post.php">Wildlife</a></li>
+                <li><a href="<?= Frontend ?>category-post.php">Travel</a></li>
+                <li><a href="<?= Frontend ?>category-post.php">Photography</a></li>
+                <li><a href="<?= Frontend ?>category-post.php">Lifestyle</a></li>
+                <li><a href="<?= Frontend ?>category-post.php">Fashion</a></li>
+                <li><a href="<?= Frontend ?>category-post.php">Food</a></li>
+                <li><a href="<?= Frontend ?>category-post.php">Technology</a></li>
+                <li><a href="<?= Frontend ?>category-post.php">Business</a></li>
+                <li><a href="<?= Frontend ?>category-post.php">Sports</a></li>
             </ul>
         </article>
         <article>
