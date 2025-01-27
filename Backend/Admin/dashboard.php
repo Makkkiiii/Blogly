@@ -3,8 +3,6 @@ require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
 
 ?>
 
-
-
 <section class="dashboard">
     <div class="container dashboard_container">
         <button id="show_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-right-b"></i></button>

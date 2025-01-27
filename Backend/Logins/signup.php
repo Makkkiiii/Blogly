@@ -38,7 +38,7 @@
                     <input type="file" placeholder="Add Photo" id="avatar">
                 </div>
                 <button type="submit" class="btn">Sign Up</button>
-                <small>Already have an account? <a href="signin.html">Sign In</a></small>
+                <small>Already have an account? <a href="signin.php">Sign In</a></small>
             </form>
         </div>
     </section>
