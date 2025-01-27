@@ -15,21 +15,21 @@
 <body>
     <nav>
         <div class="container nav_container">
-            <a href="index.html" class="nav_logo">
+            <a href="index.php" class="nav_logo">
                 <img src="/Blogly/assets/BloglyIcon.png" alt="logo_icon">Blogly</a>
             <ul class="nav_items">
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <!-- <li><a href="signin.html">Sign In</a></li> -->
+                <li><a href="blog.php">Blog</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="services.php">Services</a></li>
+                <li><a href="contact.php">Contact</a></li>
+                <!-- <li><a href="signin.php">Sign In</a></li> -->
                 <li class="nav_profile">
                     <div class="avatar">
                         <img src="/Blogly/assets/avatar1.jpg">
                     </div>
                     <ul>
-                        <li><a href="/Blogly/Backend/dashboard.html">Dashboard</a></li>
-                        <li><a href="logout.html">Logout</a></li>
+                        <li><a href="/Blogly/Backend/dashboard.php">Dashboard</a></li>
+                        <li><a href="logout.php">Logout</a></li>
                     </ul>
                 </li>
             </ul>
