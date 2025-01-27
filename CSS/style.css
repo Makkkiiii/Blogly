@@ -60,6 +60,10 @@ section {
   width: 100vw;
 }
 
+.section_extra-margin {
+  margin-top: 7rem;
+}
+
 h1,
 h2,
 h3,
@@ -497,7 +501,7 @@ footer ul a:hover {
 .singlepost_container {
   width: var(--form-width);
   background: var(--color-gray-900);
-  padding: 1rem 2rem 3rem;
+  padding: 1rem 2rem 8rem;
 }
 
 .singlepost_thumbnail {
@@ -1133,6 +1137,10 @@ footer ul a:hover {
 .alert_message.success {
   background: rgba(0, 196, 118, 0.1);
   color: var(--color-green);
+}
+
+.alert_message.lg {
+  text-align: center;
 }
 
 form {
