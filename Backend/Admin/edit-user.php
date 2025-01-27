@@ -1,3 +1,7 @@
+<?php
+require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
+
+?>
 <section class="form_section">
     <div class="container form_section-container">
         <h2>
