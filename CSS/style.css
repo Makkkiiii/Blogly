@@ -1,4 +1,4 @@
-/* ====================== ALL THE CSS FOR BACKEND AND FRONTEND */
+/* ! ====================== ALL THE CSS FOR BACKEND AND FRONTEND */
 :root {
   --color-primary: #6f6af8;
   --color-primary-light: hsl(242, 91%, 69%, 18%);
@@ -27,7 +27,7 @@
   --card-border-radius-5: 5rem;
 }
 
-/* ====================GENERAL========================== */
+/* ! ====================GENERAL========================== */
 
 * {
   margin: 0;
@@ -98,7 +98,7 @@ img {
   object-fit: cover;
 }
 
-/* =============NAV============ */
+/* ! =============NAV============ */
 
 nav {
   background: var(--color-primary);
@@ -190,7 +190,7 @@ nav button {
   z-index: 10;
 }
 
-/*  ==============SHOW NAV UL WHEN NAV PROFILE IS HOVERED=========*/
+/*  ! ==============SHOW NAV UL WHEN NAV PROFILE IS HOVERED=========*/
 
 .nav_profile:hover > ul {
   visibility: visible;
@@ -209,7 +209,7 @@ nav button {
   color: var(--color-bg);
 }
 
-/* CATEGORY BUTTON */
+/* ! CATEGORY BUTTON */
 
 .category_button {
   background: var(--color-primary-light);
@@ -226,7 +226,7 @@ nav button {
   color: var(--color-white);
 }
 
-/* GENERAL POST */
+/*  ! GENERAL POST */
 
 .post_thumbnail {
   border-radius: var(--card-border-radius-5) 0;
@@ -253,7 +253,7 @@ nav button {
   overflow: hidden;
 }
 
-/* FEATURED */
+/* ! FEATURED */
 
 .featured {
   margin-top: 8rem;
@@ -269,7 +269,7 @@ nav button {
   height: fit-content;
 }
 
-/* POSTS */
+/* ! POSTS */
 
 .posts_container {
   display: grid;
@@ -277,7 +277,7 @@ nav button {
   gap: 5rem;
 }
 
-/* CATEGORY BUTTON */
+/*  ! CATEGORY BUTTON */
 
 .category_buttons {
   padding: 4rem 0;
@@ -292,7 +292,7 @@ nav button {
   gap: 1rem;
 }
 
-/* FOOTER */
+/* ! FOOTER */
 
 footer {
   background: var(--color-gray-900);
@@ -475,7 +475,20 @@ footer ul a:hover {
   color: var(--color-white);
 }
 
-/* SINGLE POSTS */
+.btn.sm {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+}
+
+.btn.danger {
+  background: var(--color-red);
+}
+
+.btn:hover {
+  background: var(--color-white);
+  color: var(--color-bg);
+}
+/* ! SINGLE POSTS */
 
 .singlepost {
   margin: 6rem 0 2rem;
@@ -495,9 +508,9 @@ footer ul a:hover {
   line-height: 1.7;
 }
 
-/* MEDIA QUERIES */
+/* ! MEDIA QUERIES */
 
-/* NAV ITEMS */
+/* ! NAV ITEMS */
 
 @media screen and (max-width: 1024px) {
   .nav_items {
@@ -513,7 +526,7 @@ footer ul a:hover {
     display: none;
   }
 }
-/* END OF NAV ITEMS MEDIA QUERIES */
+/* ! END OF NAV ITEMS MEDIA QUERIES */
 
 @media screen and (max-width: 1024px) {
   .container {
@@ -531,7 +544,7 @@ footer ul a:hover {
     font-size: 0.8rem;
   }
 
-  /* NAV */
+  /* ! NAV */
   nav button {
     display: inline-block;
     font-size: 1.5rem;
@@ -589,7 +602,7 @@ footer ul a:hover {
     animation-delay: 1000ms;
   }
 
-  /* NAV ANIMATION DROPDOWN */
+  /* ! NAV ANIMATION DROPDOWN */
   @keyframes animateDropdown {
     0% {
       transform: rotateX(90deg);
@@ -643,9 +656,38 @@ footer ul a:hover {
   .form_section-container {
     padding: 3rem;
   }
+
+  .dashboard_container {
+    display: grid;
+    grid-template-columns: 4.3rem auto;
+    padding: 0;
+    background: transparent;
+  }
+  .dashboard aside {
+    background: var(--color-primary);
+  }
+
+  .dashboard aside h5 {
+    display: none;
+  }
+  .dashboard main table thead {
+    display: none;
+  }
+
+  .dashboard main table tr {
+    display: flex;
+    flex-direction: column;
+  }
+  .dashboard main table tr:nth-child(even) {
+    background: var(--color-gray-900);
+  }
+
+  .dashboard main table tr:hover td {
+    background: transparent;
+  }
 }
 
-/* SMALL DEVICES */
+/* ! SMALL DEVICES */
 
 @media screen and (max-width: 600px) {
   section {
@@ -721,7 +763,7 @@ footer ul a:hover {
     width: var(--container-width-md);
   }
 
-  /* SINGLE POST */
+  /* ! SINGLE POST */
   .singlepost_container {
     background: transparent;
     padding: 0;
@@ -730,9 +772,58 @@ footer ul a:hover {
   .form_section-container {
     padding: 0;
   }
+
+  /* ! SIDE BUTTONS */
+  .dashboard {
+    margin-top: 5rem;
+  }
+  .dashboard_container {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .dashboard main {
+    margin: 0;
+  }
+
+  .dashboard main h2 {
+    margin-top: 1rem;
+  }
+
+  .dashboard aside {
+    position: fixed;
+    box-shadow: 2rem 0 4rem rgba(0, 0, 0, 0.4);
+    left: 0;
+    height: 100vh;
+    transition: var(--transition);
+    background: var(--color-primary);
+  }
+
+  .dashboard .sidebar_toggle {
+    display: inline-block;
+    background: var(--color-primary-variant);
+    color: var(--color-white);
+    position: fixed;
+    right: 0;
+    bottom: 4rem;
+    z-index: 1;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50% 0 0 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    box-shadow: -1rem 0 2rem rgba(0, 0, 0, 0.4);
+  }
+
+  .dashboard aside a h5 {
+    display: inline-block;
+  }
+
+  #hide_sidebar-btn {
+    display: none;
+  }
 }
 
-/*  PAGES */
+/* !  PAGES */
 
 .empty_page {
   height: 70vh;
@@ -771,7 +862,7 @@ footer ul a:hover {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
-  font-family: inherit; /* Ensure the font matches */
+  font-family: inherit; /* ? Ensure the font matches */
   width: 100%;
   box-sizing: border-box;
   background-color: #333;
@@ -780,7 +871,7 @@ footer ul a:hover {
 }
 
 .contact_form textarea {
-  resize: none; /* Disable resizing */
+  resize: none; /* ? Disable resizing */
   position: relative;
 }
 
@@ -794,7 +885,7 @@ footer ul a:hover {
   right: 4px;
   color: #ccc;
   font-size: 0.8rem;
-  pointer-events: none; /* Ensure the word count does not interfere with typing */
+  pointer-events: none; /* ? Ensure the word count does not interfere with typing */
   transition: color 0.3s;
 }
 
@@ -808,7 +899,7 @@ footer ul a:hover {
 .contact_form input::placeholder,
 .contact_form textarea::placeholder {
   color: #ccc;
-  font-size: 0.8rem; /* Smaller font size */
+  font-size: 0.8rem; /* ? Smaller font size */
   font-family: inherit;
   opacity: 0.8;
   transition: opacity 0.3s;
@@ -992,7 +1083,7 @@ footer ul a:hover {
   color: var(--color-gray-200);
 }
 
-/* ======================FORM PAGE CSS================== */
+/* ! ======================FORM PAGE CSS================== */
 
 .form_section h2 {
   padding: 2rem;
@@ -1151,7 +1242,7 @@ input[type="file"]::file-selector-button:hover {
   color: var(--color-primary-variant);
 }
 
-/* Profile Picture Section */
+/* ! Profile Picture Section */
 .nav_profile {
   position: relative;
   cursor: pointer;
@@ -1210,7 +1301,7 @@ input[type="file"]::file-selector-button:hover {
   color: var(--color-bg);
 }
 
-/* Sign In/Up Button Animation */
+/* ! Sign In/Up Button Animation */
 .form_section button {
   padding: 0.6rem 1.2rem;
   background-color: var(--color-primary);
@@ -1228,9 +1319,9 @@ input[type="file"]::file-selector-button:hover {
   transform: scale(1.05);
 }
 
-/* ======================BLOG PAGE CSS================== */
+/* ! ======================BLOG PAGE CSS================== */
 
-/* SEARCH BAR */
+/* ! SEARCH BAR */
 .search_section {
   width: 100%;
   padding: 2rem 0;
@@ -1304,4 +1395,74 @@ input[type="file"]::file-selector-button:hover {
 .search_button:hover {
   background-color: #0056b3;
   transform: scale(1.05);
+}
+
+/* ! DASH MANAGE */
+
+.dashboard {
+  margin-top: 6rem;
+}
+
+.sidebar_toggle {
+  display: none;
+}
+.dashboard_container {
+  display: grid;
+  grid-template-columns: 14rem auto;
+  gap: 1rem;
+  background: var(--color-gray-900);
+  margin-bottom: 5rem;
+}
+
+.dashboard aside a {
+  background: var(--color-primary);
+  display: flex;
+  padding: 1.6rem;
+  gap: 1rem;
+  align-items: center;
+}
+
+.dashboard aside a:hover {
+  background: var(--color-gray-700);
+}
+
+.dashboard aside ul li:not(:last-child) a {
+  border-bottom: 1px solid var(--color-gray-900);
+}
+
+.dashboard aside a.active {
+  background-color: var(--color-gray-900);
+}
+
+.dashboard main {
+  margin-left: 1.5rem;
+}
+
+/* ! .dashboard main h2 {
+  ! margin: 0 0 2rem 0;
+  ! line-height: 1;
+! } 
+! */
+
+.dashboard main table {
+  width: 100%;
+  text-align: left;
+}
+
+.dashboard main table th {
+  background: var(--color-gray-700);
+  color: var(--color-white);
+  padding: 0.8rem;
+}
+
+.dashboard main table td {
+  border-bottom: 1px solid var(--color-gray-200);
+  padding: 0.8rem;
+}
+
+.dashboard main table tr:hover td {
+  background-color: var(--color-bg);
+  color: var(--color-white);
+  cursor: default;
+  transition: var(--transition);
 }

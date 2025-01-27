@@ -1,4 +1,4 @@
-// ========================== ALL THE SCRIPT FOR BACKEND AND FRONTEND =======================
+// ! ========================== ALL THE SCRIPT FOR BACKEND AND FRONTEND =======================
 const navItems = document.querySelector(".nav_items");
 const openNavBtn = document.querySelector("#open_nav-btn");
 const closeNavBtn = document.querySelector("#close_nav-btn");
@@ -17,7 +17,7 @@ const closeNav = () => {
 };
 closeNavBtn.addEventListener("click", closeNav);
 
-//WORD COUNT FOR MESSAGE TEXTAREA
+// ! WORD COUNT FOR MESSAGE TEXTAREA
 document.addEventListener("DOMContentLoaded", function () {
   const textarea = document.getElementById("message");
   const wordCount = document.getElementById("wordCount");
@@ -28,12 +28,18 @@ document.addEventListener("DOMContentLoaded", function () {
       wordCount.textContent = `${currentLength}/100`;
 
       if (currentLength === 0) {
-        wordCount.style.color = "#ccc"; // Default color
+        wordCount.style.color = "#ccc"; // * Default color
       } else if (currentLength < 100) {
-        wordCount.style.color = "red"; // Red color when typing
+        wordCount.style.color = "red"; // ! Red color when typing
       } else {
-        wordCount.style.color = "green"; // Green color when limit is reached
+        wordCount.style.color = "green"; // * Green color when limit is reached
       }
     });
   }
 });
+
+// ? SIDEBAR HIDE SHOW
+
+const sidebar = document.querySelector("aside");
+const showSidebarBtn = document.querySelector("#show-sidebar-btn");
+const hideSidebarBtnebar = document.querySelector("#hide-sidebar-btn");
