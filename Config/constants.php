@@ -7,11 +7,11 @@ if (!defined('ROOT_URL')) {
     define('ROOT_URL', 'http://localhost/Blogly/');
 }
 
-if (!defined('Frontend')) {
+if (!defined('FRONTEND')) {
     define('Frontend', 'http://localhost/Blogly/Frontend/');
 }
 
-if (!defined('Backend')) {
+if (!defined('BACKEND')) {
     define('Backend', 'http://localhost/Blogly/Backend/Admin/');
 }
 

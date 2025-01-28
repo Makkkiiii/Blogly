@@ -1,13 +1,29 @@
 <?php
 require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
 
+// ! FETCH USER FROM DATABASE EXCEPT FOR THE CURRENT USER
+
+$current_admin_id = $_SESSION['user-id'];
+$query = "SELECT * FROM users WHERE id != $current_admin_id";
+$users = mysqli_query($conn, $query);
+
 ?>
 <section class="dashboard">
+    <!-- ? SHOWS ADD USER WAS SUCCESSFUL -->
     <?php if (isset($_SESSION['add-user'])) : ?>
         <div class="alert_message success container">
             <p>
                 <?= $_SESSION['add-user'];
                 unset($_SESSION['add-user']);
+                ?>
+            </p>
+        </div>
+        <!-- ? SHOWS EDIT USER WAS SUCCESSFUL -->
+    <?php elseif (isset($_SESSION['edit-user'])) : ?>
+        <div class="alert_message success container">
+            <p>
+                <?= $_SESSION['edit-user'];
+                unset($_SESSION['edit-user']);
                 ?>
             </p>
         </div>
@@ -70,28 +86,15 @@ require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
 
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Ernest Achiever</td>
-                        <td>Achiever</td>
-                        <td><a href="<?= Backend ?>edit-user.php" class="btn sm">Edit</a></td>
-                        <td><a href="<?= Backend ?>delete-category.php" class="btn sm danger">Delete</a></td>
-                        <td>Yes</td>
-                    </tr>
-                    <tr>
-                        <td>Danial Marsh</td>
-                        <td>Achiever</td>
-                        <td><a href="<?= Backend ?>edit-user.php" class="btn sm">Edit</a></td>
-                        <td><a href="<?= Backend ?>delete-category.php" class="btn sm danger">Delete</a></td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>Erwin Smith</td>
-                        <td>Achiever</td>
-                        <td><a href="<?= Backend ?>edit-category.php" class="btn sm">Edit</a></td>
-                        <td><a href="<?= Backend ?>delete-category.php" class="btn sm danger">Delete</a></td>
-                        <td>No</td>
-                    </tr>
-
+                    <?php while ($user = mysqli_fetch_assoc($users)): ?>
+                        <tr>
+                            <td><?= "{$user['firstname']} {$user['lastname']}" ?></td>
+                            <td><?= "{$user['username']} " ?></td>
+                            <td><a href="<?= Backend ?>edit-user.php?id=<?= $user['id'] ?>" class="btn sm">Edit</a></td>
+                            <td><a href="<?= Backend ?>delete-category.php?id=<?= $user['id'] ?>" class="btn sm danger">Delete</a></td>
+                            <td><?= $user['is_admin'] ? 'Yes' : 'No'  ?></td>
+                        </tr>
+                    <?php endwhile; ?>
                 </tbody>
             </table>
 
