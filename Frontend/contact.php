@@ -2,12 +2,40 @@
 include '/Xampp/htdocs/Blogly/Partials/header.php';
 
 ?>
+
+<?php
+if (isset($_SESSION['contact_error'])) {
+    echo '<div class="alert_message error"><p>' . $_SESSION['contact_error'] . '</p></div>';
+    unset($_SESSION['contact_error']);
+}
+if (isset($_SESSION['contact_success'])) {
+    echo '<div class="alert_message success"><p>' . $_SESSION['contact_success'] . '</p></div>';
+    unset($_SESSION['contact_success']);
+}
+?>
+
+
 <section class="contact_page">
-    <h1>
-        Contact Us
-    </h1>
+    <h1>Contact Us</h1>
     <div class="contact_form">
-        <form action="submit_contact_form.php" method="post">
+        <?php if (isset($_SESSION['contact_success'])) : ?>
+            <div class="alert_message success container">
+                <p>
+                    <?= $_SESSION['contact_success'];
+                    unset($_SESSION['contact_success']);
+                    ?>
+                </p>
+            </div>
+        <?php elseif (isset($_SESSION['contact_error'])) : ?>
+            <div class="alert_message error container">
+                <p>
+                    <?= $_SESSION['contact_error'];
+                    unset($_SESSION['contact_error']);
+                    ?>
+                </p>
+            </div>
+        <?php endif; ?>
+        <form action="/Blogly/Logics/submit-contact-form.php" method="post">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="Full Name" required>
 
@@ -16,8 +44,7 @@ include '/Xampp/htdocs/Blogly/Partials/header.php';
 
             <label for="message">Message:</label>
             <div class="textarea-container">
-                <textarea id="message" name="message" placeholder="Your Message" required
-                    maxlength="100"></textarea>
+                <textarea id="message" name="message" placeholder="Your Message" required maxlength="100"></textarea>
                 <div id="wordCount" class="wordCount">0/100</div>
             </div>
             <button type="submit">Send Message</button>

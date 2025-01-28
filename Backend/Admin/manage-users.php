@@ -27,7 +27,7 @@ $users = mysqli_query($conn, $query);
                 ?>
             </p>
         </div>
-        <!-- ? SHOWS EDIT USER WAS SUCCESSFUL -->
+        <!-- ? SHOWS EDIT USER FAILED -->
     <?php elseif (isset($_SESSION['edit-user'])) : ?>
         <div class="alert_message error container">
             <p>
