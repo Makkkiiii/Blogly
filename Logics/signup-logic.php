@@ -95,7 +95,7 @@ if (isset($_POST['submit'])) {
         mysqli_stmt_bind_param($stmt, 'ssssss', $firstname, $lastname, $username, $email, $hashed_password, $avatar_name);
         $result = mysqli_stmt_execute($stmt);
         if ($result) {
-            $_SESSION['signup'] = "Registration successful! You can now log in.";
+            $_SESSION['signup'] = "Registration successful! You can now log in. Please click the icon <strong>Blogly</strong> Button.";
             $_SESSION['signup-type'] = "success";
         } else {
             $_SESSION['signup'] = "Something went wrong. Please try again.";

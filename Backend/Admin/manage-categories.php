@@ -54,6 +54,25 @@ $categories = mysqli_query($conn, $query);
             </p>
         </div>
     <?php endif; ?>
+    <!-- ? SHOWS EDIT CATEGORY WAS SUCCESSFUL -->
+    <?php if (isset($_SESSION['edit-category-success'])) : ?>
+        <div class="alert_message success container">
+            <p>
+                <?= $_SESSION['edit-category-success'];
+                unset($_SESSION['edit-category-success']);
+                ?>
+            </p>
+        </div>
+        <!-- ? SHOWS EDIT CATEGORY FAILED -->
+    <?php elseif (isset($_SESSION['edit-category-error'])) : ?>
+        <div class="alert_message error container">
+            <p>
+                <?= $_SESSION['edit-category-error'];
+                unset($_SESSION['edit-category-error']);
+                ?>
+            </p>
+        </div>
+    <?php endif; ?>
     <div class="container dashboard_container">
         <button id="show_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-right-b"></i></button>
         <button id="hide_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-left-b"></i></button>
