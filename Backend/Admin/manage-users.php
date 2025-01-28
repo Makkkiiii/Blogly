@@ -83,29 +83,35 @@ $users = mysqli_query($conn, $query);
         </aside>
         <main>
             <h2>Manage Users</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Username</th>
-                        <th>Edit</th>
-                        <th>Delete</th>
-                        <th>Admin</th>
-                    </tr>
-
-                </thead>
-                <tbody>
-                    <?php while ($user = mysqli_fetch_assoc($users)): ?>
+            <?php if (mysqli_num_rows($users) > 0): ?>
+                <table>
+                    <thead>
                         <tr>
-                            <td><?= "{$user['firstname']} {$user['lastname']}" ?></td>
-                            <td><?= "{$user['username']} " ?></td>
-                            <td><a href="<?= Backend ?>edit-user.php?id=<?= $user['id'] ?>" class="btn sm">Edit</a></td>
-                            <td><a href="<?= Backend ?>delete-user.php?id=<?= $user['id'] ?>" class="btn sm danger">Delete</a></td>
-                            <td><?= $user['is_admin'] ? 'Yes' : 'No'  ?></td>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                            <th>Admin</th>
                         </tr>
-                    <?php endwhile; ?>
-                </tbody>
-            </table>
+
+                    </thead>
+                    <tbody>
+                        <?php while ($user = mysqli_fetch_assoc($users)): ?>
+                            <tr>
+                                <td><?= "{$user['firstname']} {$user['lastname']}" ?></td>
+                                <td><?= "{$user['username']} " ?></td>
+                                <td><a href="<?= Backend ?>edit-user.php?id=<?= $user['id'] ?>" class="btn sm">Edit</a></td>
+                                <td><a href="<?= Backend ?>delete-user.php?id=<?= $user['id'] ?>" class="btn sm danger">Delete</a></td>
+                                <td><?= $user['is_admin'] ? 'Yes' : 'No'  ?></td>
+                            </tr>
+                        <?php endwhile; ?>
+                    </tbody>
+                </table>
+            <?php else: ?>
+                <div class="alert_message error">
+                    <?= "No users found" ?>
+                </div>
+            <?php endif; ?>
 
         </main>
     </div>

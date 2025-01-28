@@ -103,7 +103,7 @@ if (isset($_POST['submit'])) {
         mysqli_stmt_bind_param($stmt, 'ssssssi', $firstname, $lastname, $username, $email, $hashed_password, $avatar_name, $is_admin);
         $result = mysqli_stmt_execute($stmt);
         if ($result) {
-            $_SESSION['add-user'] = "New user $firstname $lastname added Successfully.";
+            $_SESSION['add-user'] = "New user <strong>$firstname $lastname </strong> added Successfully.";
             $_SESSION['add-user-type'] = "success";
         } else {
             $_SESSION['add-user'] = "Something went wrong. Please try again.";

@@ -1,5 +1,6 @@
 <?php
 
+
 require '/Xampp/htdocs/Blogly/Config/database.php';
 
 if (isset($_POST['submit'])) {
@@ -27,7 +28,7 @@ if (isset($_POST['submit'])) {
         $result = mysqli_stmt_execute($stmt);
 
         if ($result) {
-            $_SESSION['add-category-success'] = "Category added successfully";
+            $_SESSION['add-category-success'] = "Category <strong>$title</strong> added successfully";
             header("Location: " . Backend . "manage-categories.php");
             exit();
         } else {
