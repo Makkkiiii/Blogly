@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+// ! SESSION HAS BEEN ALREADY STARTED INSIDE THE CONSTANTS.PHP FILE SO ITS NOT NEEDED HERE
 
 require '/Xampp/htdocs/Blogly/Config/database.php';
 

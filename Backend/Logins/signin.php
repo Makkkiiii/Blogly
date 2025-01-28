@@ -1,3 +1,19 @@
+<?php
+
+// ! SESSION HAS BEEN ALREADY STARTED INSIDE THE CONSTANTS.PHP FILE SO ITS NOT NEEDED HERE
+
+require '/Xampp/htdocs/Blogly/Config/constants.php';
+
+// ! GET BACK FORM DATA IF THERE WAS A SIGN-IN ERROR
+
+$username_email = $_SESSION['signin-data']['username_email'] ?? null;
+$password = $_SESSION['signin-data']['password'] ?? null;
+
+// ! DELETE SESSION DATA
+unset($_SESSION['signin-data']);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,30 +29,23 @@
 </head>
 
 <body>
-    <nav>
-        <div class="container nav_container">
-            <a href="/Blogly/Frontend/index.php" class="nav_logo">
-                <img src="/Blogly/assets/BloglyIcon.png" alt="logo_icon">Blogly</a>
-    </nav>
     <section class="form_section">
         <div class="container form_section-container">
-            <h2>
-                Sign In
-            </h2>
-            <div class="alert_message success">
-                <p>This is an success message.</p>
-            </div>
-            <form action="">
-                <input type="text" placeholder="Username or Email">
-                <input type="password" placeholder="Create Password">
-                <button type="submit" class="btn">Sign In</button>
+            <h2>Sign In</h2>
+            <?php if (isset($_SESSION['signin'])): ?>
+                <div class="alert_message error">
+                    <p><?= $_SESSION['signin'];
+                        unset($_SESSION['signin']); ?></p>
+                </div>
+            <?php endif; ?>
+            <form action="<?= LOGICS ?>signin-logic.php" method="post">
+                <input type="text" name="username_email" placeholder="Username or Email" value="<?= $username_email ?>" required>
+                <input type="password" name="password" placeholder="Password" value="<?= $password ?>" required>
+                <button type="submit" name="submit">Sign In</button>
                 <small>Don't have an account? <a href="signup.php">Sign Up</a></small>
             </form>
         </div>
     </section>
-
-
 </body>
-
 
 </html>

@@ -27,14 +27,14 @@ require 'Config/database.php';
                 <li><a href="<?= Frontend ?>about.php">About</a></li>
                 <li><a href="<?= Frontend ?>services.php">Services</a></li>
                 <li><a href="<?= Frontend ?>contact.php">Contact</a></li>
-                <li><a href="<?= SIGNIN ?>">Sign In</a></li>
+                <!-- <li><a href="<?= SIGNIN ?>">Sign In</a></li> -->
                 <li class="nav_profile">
                     <div class="avatar">
                         <img src="/Blogly/assets/avatar1.jpg">
                     </div>
                     <ul>
                         <li><a href="<?= Backend ?>dashboard.php">Dashboard</a></li>
-                        <li><a href="logout.php">Logout</a></li>
+                        <li><a href="<?= LOGOUT ?>">Logout</a></li>
                     </ul>
                 </li>
             </ul>
