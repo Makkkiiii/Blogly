@@ -21,16 +21,6 @@ unset($_SESSION['add-user-data']);
         <h2>
             Add User
         </h2>
-        <?php if (isset($_SESSION['add-user'])) : ?>
-            <div class="alert_message error">
-                <p>
-                    <?= $_SESSION['add-user'];
-                    unset($_SESSION['add-user']);
-                    ?>
-
-                </p>
-            </div>
-        <?php endif; ?>
         <form action="<?= LOGICS ?>add-user-logic.php" enctype="multipart/form-data" method="POST">
             <input type="text" name="firstname" value="<?= $firstname ?>" placeholder="First Name">
             <input type="text" name="lastname" value="<?= $lastname ?>" placeholder="Last Name">

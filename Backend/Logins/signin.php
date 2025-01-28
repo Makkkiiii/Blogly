@@ -33,7 +33,7 @@ unset($_SESSION['signin-data']);
         <div class="container form_section-container">
             <h2>Sign In</h2>
             <?php if (isset($_SESSION['signin'])): ?>
-                <div class="alert_message error">
+                <div class="alert_message success">
                     <p><?= $_SESSION['signin'];
                         unset($_SESSION['signin']); ?></p>
                 </div>
