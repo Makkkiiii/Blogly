@@ -32,7 +32,7 @@ if (isset($_POST['submit'])) {
             $user_record = mysqli_fetch_assoc($user_check_result);
             $db_password = $user_record['password'];
 
-            // ? COMBARING PASSWORD WITH HASHED PASSWORD
+            // ? COMPARING PASSWORD WITH HASHED PASSWORD
 
             if (password_verify($password, $db_password)) {
                 // ! SETTING SESSION VARIABLES FOR ACCESS CONTROL

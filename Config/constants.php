@@ -55,3 +55,7 @@ if (!defined('POST')) {
 if (!defined('AVATAR')) {
     define('AVATAR', 'http://localhost/Blogly/UserItems/Avatars/');
 }
+
+if (!defined('ADDUSER')) {
+    define('ADDUSER', 'http://localhost/Blogly/Backend/Admin/add-user.php');
+}

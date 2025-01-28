@@ -1,17 +1,24 @@
 <?php
+//  ! SESSION START IS INSIDE THIS FILE
 require 'Config/database.php';
+
+// ! CHECKING FOR USER ID
+if (!isset($_SESSION['user-id'])) {
+    header('location: http://localhost/Blogly/Backend/Logins/signin.php');
+    exit();
+}
 
 // ! FETCH CURRENT USER FROM DATABASE
 if (isset($_SESSION['user-id'])) {
-
     $id = filter_var($_SESSION['user-id'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-    $query = "SELECT avatar FROM users WHERE id = $id";
-    $result = mysqli_query($conn, $query);
+    $query = "SELECT avatar FROM users WHERE id = ?";
+    $stmt = mysqli_prepare($conn, $query);
+    mysqli_stmt_bind_param($stmt, 'i', $id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     $avatar = mysqli_fetch_assoc($result);
 }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
