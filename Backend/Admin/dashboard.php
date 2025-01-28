@@ -1,5 +1,5 @@
 <?php
-require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
+require '/Xampp/htdocs/Blogly/Partials/header.php';
 
 ?>
 

@@ -1,6 +1,15 @@
 <?php
 require 'Config/database.php';
 
+// ! FETCH CURRENT USER FROM DATABASE
+if (isset($_SESSION['user-id'])) {
+
+    $id = filter_var($_SESSION['user-id'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    $query = "SELECT avatar FROM users WHERE id = $id";
+    $result = mysqli_query($conn, $query);
+    $avatar = mysqli_fetch_assoc($result);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -27,16 +36,19 @@ require 'Config/database.php';
                 <li><a href="<?= Frontend ?>about.php">About</a></li>
                 <li><a href="<?= Frontend ?>services.php">Services</a></li>
                 <li><a href="<?= Frontend ?>contact.php">Contact</a></li>
-                <!-- <li><a href="<?= SIGNIN ?>">Sign In</a></li> -->
-                <li class="nav_profile">
-                    <div class="avatar">
-                        <img src="/Blogly/assets/avatar1.jpg">
-                    </div>
-                    <ul>
-                        <li><a href="<?= Backend ?>dashboard.php">Dashboard</a></li>
-                        <li><a href="<?= LOGOUT ?>">Logout</a></li>
-                    </ul>
-                </li>
+                <?php if (isset($_SESSION['user-id'])): ?>
+                    <li class="nav_profile">
+                        <div class="avatar">
+                            <img src="<?= AVATAR . $avatar['avatar'] ?>">
+                        </div>
+                        <ul>
+                            <li><a href="<?= Backend ?>dashboard.php">Dashboard</a></li>
+                            <li><a href="/Blogly/Logics/logout.php">Logout</a></li>
+                        </ul>
+                    </li>
+                <?php else: ?>
+                    <li><a href="<?= SIGNIN ?>">Sign In</a></li>
+                <?php endif; ?>
             </ul>
             <button id="open_nav-btn"><i class="uil uil-bars"></i></button>
             <button id="close_nav-btn"><i class="uil uil-times"></i></button>

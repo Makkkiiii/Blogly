@@ -48,7 +48,7 @@ if (isset($_POST['submit'])) {
                     die();
                 }
             } else {
-                $_SESSION['signin'] = "Please check your input.";
+                $_SESSION['signin'] = "Wrong Credentials.";
             }
         } else {
             $_SESSION['signin'] = "User does not exist.";

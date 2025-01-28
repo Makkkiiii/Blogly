@@ -1,5 +1,6 @@
 <?php
-require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
+
+require '/Xampp/htdocs/Blogly/Partials/header.php';
 
 ?>
 
@@ -16,7 +17,7 @@ require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
                     </a>
                 </li>
                 <li>
-                    <a href="<?= Backend ?>userdashboard.php" class="active">
+                    <a href="<?= Backend ?>edit-post.php" class="active">
                         <i class="uil uil-setting"></i>
                         <h5>Manage Posts</h5>
                     </a>
