@@ -2,16 +2,16 @@
 <?php
 session_start();
 
-// ! Check if each constant is already defined before defining it
+// Check if each constant is already defined before defining it
 if (!defined('ROOT_URL')) {
     define('ROOT_URL', 'http://localhost/Blogly/');
 }
 
-if (!defined('Frontend')) {
+if (!defined('FRONTEND')) {
     define('Frontend', 'http://localhost/Blogly/Frontend/');
 }
 
-if (!defined('Backend')) {
+if (!defined('BACKEND')) {
     define('Backend', 'http://localhost/Blogly/Backend/Admin/');
 }
 
@@ -54,4 +54,12 @@ if (!defined('POST')) {
 
 if (!defined('AVATAR')) {
     define('AVATAR', 'http://localhost/Blogly/UserItems/Avatars/');
+}
+
+if (!defined('ADDUSER')) {
+    define('ADDUSER', 'http://localhost/Blogly/Backend/Admin/add-user.php');
+}
+
+if (!defined('THUMBNAIL')) {
+    define('THUMBNAIL', 'http://localhost/Blogly/UserItems/Thumbnails/');
 }

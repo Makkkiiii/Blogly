@@ -59,3 +59,7 @@ if (!defined('AVATAR')) {
 if (!defined('ADDUSER')) {
     define('ADDUSER', 'http://localhost/Blogly/Backend/Admin/add-user.php');
 }
+
+if (!defined('THUMBNAIL')) {
+    define('THUMBNAIL', 'http://localhost/Blogly/UserItems/Thumbnails/');
+}
