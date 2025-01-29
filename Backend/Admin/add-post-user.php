@@ -28,7 +28,7 @@ unset($_SESSION['add-post-data']);
                     unset($_SESSION['add-post']); ?></p>
             </div>
         <?php endif; ?>
-        <form action="<?= LOGICS ?>add-post-logic.php" enctype="multipart/form-data" method="POST">
+        <form action="<?= LOGICS ?>add-post-logic-user.php" enctype="multipart/form-data" method="POST">
             <input type="text" name="title" placeholder="Title" value="<?= $title ?>">
             <select name="category">
                 <?php while ($category = mysqli_fetch_assoc($categories)): ?>
@@ -36,13 +36,7 @@ unset($_SESSION['add-post-data']);
                 <?php endwhile; ?>
             </select>
             <textarea rows="10" name="body" placeholder="Share Your Story" value="<?= $body ?>></textarea>
-            <?php if (isset($_SESSION['user_is_admin'])) : ?>
-                <div class=" form_control inline">
-                    <input type="checkbox" id="is_featured" name="id_featured" value="1" id="is_featured" checked>
-                    <label for="is_featured">Featured</label>
-                </div>
-            <?php endif; ?>
-            <div class="form_control">
+            <div class=" form_control">
                 <label for="thumbnail">Add Thumbnail</label>
                 <input type="file" id="thumbnail" name="thumbnail">
             </div>

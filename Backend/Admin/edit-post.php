@@ -1,6 +1,24 @@
 <?php
 require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
 
+// ! FETCHING CATGEGORIES FROM DATABASE
+
+$category_query = "SELECT * FROM categories";
+$categories = mysqli_query($conn, $category_query);
+
+// ! FETCHING FORM
+
+if (isset($_GET['id'])) {
+    $id = filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
+    $query = "SELECT * FROM posts WHERE id = $id";
+    $result = mysqli_query($conn, $query);
+    $post = mysqli_fetch_assoc($result);
+} else {
+    header('Location: ' . Backend . 'dashboard.php');
+    die();
+}
+
+
 ?>
 
 
@@ -11,20 +29,15 @@ require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
         </h2>
 
         <form action="" enctype="multipart/form-data">
-            <input type="text" placeholder="Title">
+            <input type="text" placeholder="Title" value="<?php $post['title'] ?>">
             <select>
-                <option value="1">Travel</option>
-                <option value="2">Photography</option>
-                <option value="3">Lifestyle</option>
-                <option value="4">Fashion</option>
-                <option value="5">Food</option>
-                <option value="6">Technology</option>
-                <option value="7">Business</option>
-                <option value="8">Sports</option>
+                <?php while ($category = mysqli_fetch_assoc($categories)) : ?>
+                    <option value="<?= $category['id'] ?>"><?= $category['title'] ?></option>
+                <?php endwhile; ?>
             </select>
-            <textarea rows="10" placeholder="Share Your Story"></textarea>
+            <textarea rows="10" placeholder="Share Your Story"><?= $post['body'] ?></textarea>
             <div class="form_control inline">
-                <input type="checkbox" id="is_featured" checked>
+                <input type="checkbox" id="is_featured" value="1" checked>
                 <label for="is_featured">Featured</label>
             </div>
             <div class="form_control">

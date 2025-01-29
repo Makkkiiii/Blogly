@@ -1,8 +1,8 @@
 <?php
-
 // ! PATH 
 
 include '/Xampp/htdocs/Blogly/Partials/header.php';
+
 
 ?>
 <!-- ============= MAIN PART TILL NAV IS INSIDE THE HEADER.PHP FILE  SINCE IT IS REPEATING FOR THE MOST PART=============-->
