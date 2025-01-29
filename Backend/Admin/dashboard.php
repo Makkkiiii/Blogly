@@ -1,5 +1,5 @@
 <?php
-require '/Xampp/htdocs/Blogly/Partials/header.php';
+require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
 
 $current_user_id = $_SESSION['user-id'];
 $query = "SELECT id, title, category_id FROM posts WHERE author_id = $current_user_id ORDER BY id DESC";
@@ -10,35 +10,45 @@ $posts = mysqli_query($conn, $query);
 
 <section class="dashboard">
     <!-- ? SHOWS ADD POST WAS SUCCESSFUL -->
-    <?php if (isset($_SESSION['add-post'])) : ?>
+    <?php if (isset($_SESSION['add-post-success'])) : ?>
         <div class="alert_message success container">
             <p>
-                <?= $_SESSION['add-post'];
-                unset($_SESSION['add-post']);
-                ?>
+                <?= $_SESSION['add-post-success']; ?>
+                <?php unset($_SESSION['add-post-success']); ?>
             </p>
         </div>
-    <?php elseif (isset($_SESSION['edit-post'])) : ?>
-        <div class="alert_message success container">
+    <?php elseif (isset($_SESSION['add-post-error'])) : ?>
+        <div class="alert_message error container">
             <p>
-                <?= $_SESSION['edit-post'];
-                unset($_SESSION['edit-post']);
-                ?>
+                <?= $_SESSION['add-post-error']; ?>
+                <?php unset($_SESSION['add-post-error']); ?>
             </p>
         </div>
     <?php endif; ?>
+
+    <!-- ? SHOWS EDIT POST WAS SUCCESSFUL -->
+    <?php if (isset($_SESSION['edit-post'])) : ?>
+        <div class="alert_message success container">
+            <p>
+                <?= $_SESSION['edit-post']; ?>
+                <?php unset($_SESSION['edit-post']); ?>
+            </p>
+        </div>
+    <?php endif; ?>
+
+    <!-- ? SHOWS DELETE POST WAS SUCCESSFUL -->
     <?php if (isset($_SESSION['delete-post-success'])): ?>
         <div class="alert_message success container">
             <p>
-                <?= $_SESSION['delete-post-success'];
-                unset($_SESSION['delete-post-success']); ?>
+                <?= $_SESSION['delete-post-success']; ?>
+                <?php unset($_SESSION['delete-post-success']); ?>
             </p>
         </div>
     <?php elseif (isset($_SESSION['delete-post-error'])): ?>
         <div class="alert_message error container">
             <p>
-                <?= $_SESSION['delete-post-error'];
-                unset($_SESSION['delete-post-error']); ?>
+                <?= $_SESSION['delete-post-error']; ?>
+                <?php unset($_SESSION['delete-post-error']); ?>
             </p>
         </div>
     <?php endif; ?>

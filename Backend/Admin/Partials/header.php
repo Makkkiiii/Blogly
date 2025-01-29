@@ -49,7 +49,7 @@ if (isset($_SESSION['user-id'])) {
                             <img src="<?= AVATAR . $avatar['avatar'] ?>">
                         </div>
                         <ul>
-                            <li><a href="<?= Backend ?>dashboard.php">Dashboard</a></li>
+                            <li><a href="<?= Backend ?>dashboard.php">Admin Dashboard</a></li>
                             <li><a href="/Blogly/Logics/logout.php">Logout</a></li>
                         </ul>
                     </li>

@@ -15,9 +15,47 @@ $posts = mysqli_query($conn, $query);
     <?php if (isset($_SESSION['add-post'])) : ?>
         <div class="alert_message success container">
             <p>
-                <?= $_SESSION['add-post'];
-                unset($_SESSION['add-post']);
-                ?>
+                <?= $_SESSION['add-post']; ?>
+                <?php unset($_SESSION['add-post']); ?>
+            </p>
+        </div>
+    <?php endif; ?>
+
+    <!-- ? SHOWS DELETE POST WAS SUCCESSFUL -->
+    <?php if (isset($_SESSION['delete-post-success'])) : ?>
+        <div class="alert_message success container">
+            <p>
+                <?= $_SESSION['delete-post-success']; ?>
+                <?php unset($_SESSION['delete-post-success']); ?>
+            </p>
+        </div>
+    <?php endif; ?>
+
+    <!-- ? SHOWS DELETE POST ERROR -->
+    <?php if (isset($_SESSION['delete-post-error'])) : ?>
+        <div class="alert_message error container">
+            <p>
+                <?= $_SESSION['delete-post-error']; ?>
+                <?php unset($_SESSION['delete-post-error']); ?>
+            </p>
+        </div>
+    <?php endif; ?>
+    <!-- ? SHOWS ADD POST WAS SUCCESSFUL -->
+    <?php if (isset($_SESSION['add-post-success'])) : ?>
+        <div class="alert_message success container">
+            <p>
+                <?= $_SESSION['add-post-success']; ?>
+                <?php unset($_SESSION['add-post-success']); ?>
+            </p>
+        </div>
+    <?php endif; ?>
+
+    <!-- ? SHOWS ADD POST ERROR -->
+    <?php if (isset($_SESSION['add-post-error'])) : ?>
+        <div class="alert_message error container">
+            <p>
+                <?= $_SESSION['add-post-error']; ?>
+                <?php unset($_SESSION['add-post-error']); ?>
             </p>
         </div>
     <?php endif; ?>
@@ -27,13 +65,13 @@ $posts = mysqli_query($conn, $query);
         <aside>
             <ul>
                 <li>
-                    <a href="<?= Backend ?>add-post-user.php">
+                    <a href="<?= REGUSER ?>add-post-user.php">
                         <i class="uil uil-pen"></i>
                         <h5>Add Post</h5>
                     </a>
                 </li>
                 <li>
-                    <a href="<?= Backend ?>edit-post-user.php" class="active">
+                    <a href="<?= REGUSER ?>userdash.php" class="active">
                         <i class="uil uil-setting"></i>
                         <h5>Manage Posts</h5>
                     </a>
@@ -66,8 +104,8 @@ $posts = mysqli_query($conn, $query);
                             <tr>
                                 <td><?= $post['title'] ?></td>
                                 <td><?= $category['title'] ?></td>
-                                <td><a href="<?= Backend ?>edit-post-user.php?id=<?= $post['id'] ?>" class="btn sm">Edit</a></td>
-                                <td><a href="<?= Backend ?>delete-post-user.php?id=<?= $post['id'] ?>" class="btn sm danger">Delete</a></td>
+                                <td><a href="<?= REGUSER ?>edit-post-user.php?id=<?= $post['id'] ?>" class="btn sm">Edit</a></td>
+                                <td><a href="<?= REGUSER ?>delete-post-user-logic.php?id=<?= $post['id'] ?>" class="btn sm danger">Delete</a></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>

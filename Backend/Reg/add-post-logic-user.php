@@ -46,7 +46,7 @@ if (isset($_POST['submit'])) {
 
                     if ($result) {
                         $_SESSION['add-post-success'] = "Post added successfully";
-                        header("Location: " . Backend . "userdash.php");
+                        header("Location: " . REGUSER . "userdash.php");
                         exit();
                     } else {
                         $_SESSION['add-post'] = "An error occurred";
@@ -65,11 +65,11 @@ if (isset($_POST['submit'])) {
     // ! REDIRECT BACK TO ADD POST IF THERE IS AN ERROR
     if (isset($_SESSION['add-post'])) {
         $_SESSION['add-post-data'] = $_POST;
-        header('Location: ' . Backend . 'add-post-user.php');
+        header('Location: ' . REGUSER . 'add-post-user.php');
         exit();
     }
 } else {
     // Redirect to add post form if the form was not submitted
-    header("Location: " . Backend . "add-post-user.php");
+    header("Location: " . REGUSER . "add-post-user.php");
     exit();
 }

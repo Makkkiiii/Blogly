@@ -39,8 +39,8 @@ if (!defined('DASHBOARD')) {
     define('DASHBOARD', 'http://localhost/Blogly/Backend/Admin/dashboard.php');
 }
 
-if (!defined('USERDASH')) {
-    define('USERDASH', 'http://localhost/Blogly/Backend/Admin/userdash.php');
+if (!defined('REG')) {
+    define('REG', 'http://localhost/Blogly/Backend/Reg/userdash.php');
 }
 
 if (!defined('HOMEPAGE')) {
@@ -62,4 +62,8 @@ if (!defined('ADDUSER')) {
 
 if (!defined('THUMBNAIL')) {
     define('THUMBNAIL', 'http://localhost/Blogly/UserItems/Thumbnails/');
+}
+
+if (!defined('REGUSER')) {
+    define('REGUSER', 'http://localhost/Blogly/Backend/Reg/');
 }

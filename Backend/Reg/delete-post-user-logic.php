@@ -38,5 +38,5 @@ if (isset($_GET['id'])) {
     }
 }
 
-header('Location: ' . Backend . 'userdash.php');
+header('Location: ' . REGUSER . 'userdash.php');
 exit();

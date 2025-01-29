@@ -59,7 +59,7 @@ if (isset($_POST['submit'])) {
         // ! REDIRECT BACK TO EDIT POST IF THERE IS AN ERROR
         if (isset($_SESSION['edit-post'])) {
             $_SESSION['edit-post-data'] = $_POST;
-            header('Location: ' . Backend . 'edit-post-user.php?id=' . $id);
+            header('Location: ' . REGUSER . 'edit-post-user.php?id=' . $id);
             exit();
         } else {
             // ! SET is_featured OF ALL POSTS TO 0 IF is_featured FOR THIS POST IS 1
@@ -76,17 +76,17 @@ if (isset($_POST['submit'])) {
 
             if ($result) {
                 $_SESSION['edit-post-success'] = "Post updated successfully";
-                header("Location: " . Backend . "userdash.php");
+                header("Location: " . REGUSER . "userdash.php");
                 exit();
             } else {
                 $_SESSION['edit-post'] = "An error occurred";
-                header('Location: ' . Backend . 'edit-post-user.php?id=' . $id);
+                header('Location: ' . REGUSER . 'edit-post-user.php?id=' . $id);
                 exit();
             }
         }
     }
 } else {
     // Redirect to edit post form if the form was not submitted
-    header("Location: " . Backend . "edit-post-user.php");
+    header("Location: " . REGUSER . "edit-post-user.php");
     exit();
 }

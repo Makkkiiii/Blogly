@@ -1,5 +1,5 @@
 <?php
-require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
+require '/Xampp/htdocs/Blogly/Partials/header.php';
 
 // ! FETCHING CATEGORIES
 
@@ -28,7 +28,7 @@ unset($_SESSION['add-post-data']);
                     unset($_SESSION['add-post']); ?></p>
             </div>
         <?php endif; ?>
-        <form action="<?= LOGICS ?>add-post-logic-user.php" enctype="multipart/form-data" method="POST">
+        <form action="<?= REGUSER ?>add-post-logic-user.php" enctype="multipart/form-data" method="POST">
             <input type="text" name="title" placeholder="Title" value="<?= $title ?>">
             <select name="category">
                 <?php while ($category = mysqli_fetch_assoc($categories)): ?>

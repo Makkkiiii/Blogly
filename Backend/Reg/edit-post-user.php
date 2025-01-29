@@ -1,6 +1,6 @@
 <?php
 // filepath: /d:/Xampp/htdocs/Blogly/Backend/Admin/edit-post.php
-require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
+require '/Xampp/htdocs/Blogly/Partials/header.php';
 
 // ! FETCHING CATEGORIES FROM DATABASE
 $category_query = "SELECT * FROM categories";
@@ -39,7 +39,7 @@ if (isset($_GET['id'])) {
                 </p>
             </div>
         <?php endif; ?>
-        <form action="<?= LOGICS ?>edit-post-user-logic.php" enctype="multipart/form-data" method="POST">
+        <form action="<?= REGUSER ?>edit-post-logic-user.php" enctype="multipart/form-data" method="POST">
             <input type="hidden" name="id" value="<?= $post['id'] ?>">
             <input type="hidden" name="previous_thumbnail" value="<?= $post['thumbnail'] ?>">
             <input type="text" name="title" placeholder="Title" value="<?= htmlspecialchars($post['title']) ?>">

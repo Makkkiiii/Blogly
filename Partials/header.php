@@ -50,7 +50,13 @@ if (isset($_SESSION['user-id'])) {
                             <img src="<?= AVATAR . $avatar['avatar'] ?>">
                         </div>
                         <ul>
-                            <li><a href="<?= Backend ?>dashboard.php">Dashboard</a></li>
+                            <li>
+                                <?php if (isset($_SESSION['user_is_admin']) && $_SESSION['user_is_admin']): ?>
+                                    <a href="/Blogly/Backend/Admin/dashboard.php">Admin Dashboard</a>
+                                <?php else: ?>
+                                    <a href="<?= REGUSER ?>userdash.php">Dashboard</a>
+                                <?php endif; ?>
+                            </li>
                             <li><a href="/Blogly/Logics/logout.php">Logout</a></li>
                         </ul>
                     </li>

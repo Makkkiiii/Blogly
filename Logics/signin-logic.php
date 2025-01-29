@@ -44,7 +44,7 @@ if (isset($_POST['submit'])) {
                     die();
                 } else {
                     $_SESSION['user_is_admin'] = false;
-                    header('location: ' . USERDASH);
+                    header('location: ' . REGUSER . 'userdash.php');
                     die();
                 }
             } else {
