@@ -23,6 +23,32 @@ if (isset($_GET['id'])) {
             unlink($avatar_path);
         }
 
+        $thumbnails_query = "SELECT * FROM posts WHERE user_id = $id";
+        $thumbnails_result = mysqli_query($conn, $thumbnails_query);
+        if (mysqli_num_rows($thumbnails_result) > 0) {
+            while ($thumbnail = mysqli_fetch_assoc($thumbnails_result)) {
+                $thumbnail_name = $thumbnail['thumbnail'];
+                $thumbnail_path = THUMBNAIL . $thumbnail_name;
+                $useritems_path = '/Xampp/htdocs/Blogly/UserItems/' . $thumbnail_name;
+
+                // ! DELETING IMAGE FROM THUMBNAIL PATH
+                if (file_exists($thumbnail_path)) {
+                    unlink($thumbnail_path);
+                }
+
+                // ! DELETING IMAGE FROM USERITEMS PATH
+                if (file_exists($useritems_path)) {
+                    unlink($useritems_path);
+                }
+
+                // ! DELETING IMAGE
+                if (file_exists($thumbnail_path)) {
+                    unlink($thumbnail_path);
+                }
+            }
+        }
+
+
         // ! DELETE USER FROM DATABASE
         $stmt = $conn->prepare("DELETE FROM users WHERE id = ?");
         $stmt->bind_param("i", $id);

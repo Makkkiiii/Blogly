@@ -1,139 +1,86 @@
 <?php
 include '/Xampp/htdocs/Blogly/Partials/header.php';
 
+// ! FETCH CATEGORY TITLE AND POSTS FROM DATABASE
+if (isset($_GET['category_id'])) {
+    $category_id = filter_var($_GET['category_id'], FILTER_SANITIZE_NUMBER_INT);
+
+    // Fetch category title
+    $category_query = "SELECT title FROM categories WHERE id = $category_id";
+    $category_result = mysqli_query($conn, $category_query);
+    $category = mysqli_fetch_assoc($category_result);
+
+    // Fetch posts for the category
+    $posts_query = "SELECT * FROM posts WHERE category_id = $category_id ORDER BY id DESC";
+    if (isset($_GET['query'])) {
+        $search_query = filter_var($_GET['query'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $posts_query = "SELECT * FROM posts WHERE category_id = $category_id AND (title LIKE '%$search_query%' OR body LIKE '%$search_query%') ORDER BY id DESC";
+    }
+    $posts_result = mysqli_query($conn, $posts_query);
+} else {
+    header('Location: ' . Frontend . 'index.php');
+    exit();
+}
 ?>
 
 <header class="category_title">
-    <h2>Category Title</h2>
+    <h2><?= htmlspecialchars($category['title']) ?></h2>
 </header>
 
-<!-- END OF CATEGORY TITLE -->
+<section class="search_section">
+    <form class="search_form" action="<?= Frontend ?>category-post.php" method="GET">
+        <input type="hidden" name="category_id" value="<?= $category_id ?>">
+        <div class="search_input-container">
+            <i class="uil uil-search search_icon"></i>
+            <input type="text" class="search_input" name="query" placeholder="Search for blogs..." value="<?= isset($search_query) ? htmlspecialchars($search_query) : '' ?>">
+        </div>
+        <button type="submit" class="search_button">Search</button>
+    </form>
+</section>
 
+<!-- ============= DISPLAY ALL POSTS =============-->
 <section class="posts">
     <div class="container posts_container">
-        <article class="post">
-            <div class="post_thumbnail">
-                <img src="/Blogly/assets/blog3.jpg">
-            </div>
-            <div class="post_info">
-                <a href="/Blogly/Backend/category-post.php" class="category_button">Wild life</a>
-                <h3 class="post_title">
-                    <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-                        perspiciatis aspernatur tempora labore natus in, maiores quae ad officiis provident optio
-                        aliquam. Quo alias cum sed, nam a libero eaque?</a>
-                </h3>
-                <p class="post_body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Quisquam, quos.
-                </p>
-                <div class="post_author">
-                    <div class="post_author-avatar">
-                        <img src="/Blogly/assets/avatar3.jpg">
-                    </div>
-                    <div class="post_author-info">
-                        <h5>By: Arthur Morgan</h5>
-                        <small>June 13, 2025 - 07:13</small>
+        <?php while ($post = mysqli_fetch_assoc($posts_result)) : ?>
+            <article class="post">
+                <div class="post_thumbnail">
+                    <img src="/Blogly/UserItems/Thumbnails/<?= $post['thumbnail'] ?>" alt="Post Thumbnail">
+                </div>
+                <div class="post_info">
+                    <?php
+                    // Fetch category details
+                    $category_id = $post['category_id'];
+                    $category_query = "SELECT title FROM categories WHERE id = $category_id";
+                    $category_result = mysqli_query($conn, $category_query);
+                    $category = mysqli_fetch_assoc($category_result);
+                    ?>
+                    <a href="<?= Frontend ?>category-post.php?category_id=<?= $post['category_id'] ?>" class="category_button"><?= htmlspecialchars($category['title']) ?></a>
+                    <h3 class="post_title">
+                        <a href="<?= Frontend ?>post.php?id=<?= $post['id'] ?>"><?= htmlspecialchars($post['title']) ?></a>
+                    </h3>
+                    <p class="post_body">
+                        <?= htmlspecialchars(substr($post['body'], 0, 150)) ?>...
+                    </p>
+                    <div class="post_author">
+                        <?php
+                        // Fetch author details
+                        $author_id = $post['author_id'];
+                        $author_query = "SELECT * FROM users WHERE id = $author_id";
+                        $author_result = mysqli_query($conn, $author_query);
+                        $author = mysqli_fetch_assoc($author_result);
+                        ?>
+                        <div class="post_author-avatar">
+                            <img src="/Blogly/UserItems/Avatars/<?= $author['avatar'] ?>" alt="Author Avatar">
+                        </div>
+                        <div class="post_author-info">
+                            <h5>By: <?= htmlspecialchars($author['firstname']) . ' ' . htmlspecialchars($author['lastname']) ?></h5>
+                            <small><?= date('M d, Y', strtotime($post['date_time'])) ?></small>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </article>
-
-        <article class="post">
-            <div class="post_thumbnail">
-                <img src="/Blogly/assets/blog7.jpg">
-            </div>
-            <div class="post_info">
-                <a href="/Blogly/Backend/category-post.php" class="category_button">Wild life</a>
-                <h3 class="post_title">
-                    <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-                        perspiciatis aspernatur tempora labore natus in, maiores quae ad officiis provident optio
-                        aliquam. Quo alias cum sed, nam a libero eaque?</a>
-                </h3>
-                <p class="post_body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Quisquam, quos.
-                </p>
-                <div class="post_author">
-                    <div class="post_author-avatar">
-                        <img src="/Blogly/assets/avatar4.jpg">
-                    </div>
-                    <div class="post_author-info">
-                        <h5>By: Arthur Morgan</h5>
-                        <small>June 13, 2025 - 07:13</small>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <article class="post">
-            <div class="post_thumbnail">
-                <img src="/Blogly/assets/blog5.jpg">
-            </div>
-            <div class="post_info">
-                <a href="/Blogly/Backend/category-post.php" class="category_button">Wild life</a>
-                <h3 class="post_title">
-                    <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-                        perspiciatis aspernatur tempora labore natus in, maiores quae ad officiis provident optio
-                        aliquam. Quo alias cum sed, nam a libero eaque?</a>
-                </h3>
-                <p class="post_body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Quisquam, quos.
-                </p>
-                <div class="post_author">
-                    <div class="post_author-avatar">
-                        <img src="/Blogly/assets/avatar5.jpg">
-                    </div>
-                    <div class="post_author-info">
-                        <h5>By: Arthur Morgan</h5>
-                        <small>June 13, 2025 - 07:13</small>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <article class="post">
-            <div class="post_thumbnail">
-                <img src="/Blogly/assets/blog8.jpg">
-            </div>
-            <div class="post_info">
-                <a href="/Blogly/Backend/category-post.php" class="category_button">Wild life</a>
-                <h3 class="post_title">
-                    <a href="post.php">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-                        perspiciatis aspernatur tempora labore natus in, maiores quae ad officiis provident optio
-                        aliquam. Quo alias cum sed, nam a libero eaque?</a>
-                </h3>
-                <p class="post_body">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. Quisquam, quos.
-                </p>
-                <div class="post_author">
-                    <div class="post_author-avatar">
-                        <img src="/Blogly/assets/avatar8.jpg">
-                    </div>
-                    <div class="post_author-info">
-                        <h5>By: Arthur Morgan</h5>
-                        <small>June 13, 2025 - 07:13</small>
-                    </div>
-                </div>
-            </div>
-        </article>
-    </div>
-
-</section>
-<!-- END OF POSTS -->
-<section class="category_buttons">
-    <div class="container category_buttons-container">
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Wildlife</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Travel</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Photography</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Lifestyle</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Fashion</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Food</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Technology</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Business</a>
-        <a href="/Blogly/Backend/category-post.php" class="category_button">Sports</a>
+            </article>
+        <?php endwhile; ?>
     </div>
 </section>
-<!-- END OF CATEGORY -->
 
-<?php
-
-include '/Xampp/htdocs/Blogly/Partials/footer.php';
-
-?>
+<?php include '/Xampp/htdocs/Blogly/Partials/footer.php'; ?>

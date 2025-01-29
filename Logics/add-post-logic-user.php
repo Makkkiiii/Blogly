@@ -1,5 +1,6 @@
 <?php
 
+// filepath: /d:/Xampp/htdocs/Blogly/Logics/add-post-logic.php
 require '/Xampp/htdocs/Blogly/Config/database.php';
 
 if (isset($_POST['submit'])) {
@@ -7,10 +8,7 @@ if (isset($_POST['submit'])) {
     $title = filter_var($_POST['title'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $body = filter_var($_POST['body'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $category_id = filter_var($_POST['category'], FILTER_SANITIZE_NUMBER_INT);
-    $is_featured = 0;
-    if (isset($_POST['is_featured']) && $_SESSION['user-role'] === 'admin') {
-        $is_featured = filter_var($_POST['is_featured'], FILTER_SANITIZE_NUMBER_INT);
-    }
+    $is_featured = filter_var($_POST['is_featured'] ?? 0, FILTER_SANITIZE_NUMBER_INT);
     $thumbnail = $_FILES['thumbnail'];
 
     // ! set is_featured to 0 if unchecked
@@ -31,48 +29,47 @@ if (isset($_POST['submit'])) {
         $time = time();
         $thumbnail_name = $time . '_' . $thumbnail['name'];
         $thumbnail_tmp_name = $thumbnail['tmp_name'];
-        $thumbnail_destination_path = '/Xampp/htdocs/Blogly/UserItems/Thumbnails' . $thumbnail_name;
+        $thumbnail_destination_path = '/Xampp/htdocs/Blogly/UserItems/Thumbnails/' . $thumbnail_name;
 
         // ! Make sure the file is an image
         $allowed_files = ['jpg', 'jpeg', 'png'];
-        $extension = explode('.', $thumbnail_name);
-        $extension = end($extension);
+        $extension = pathinfo($thumbnail_name, PATHINFO_EXTENSION);
         if (in_array($extension, $allowed_files)) {
             // ! MAKE SURE IMAGE IS NOT TOO BIG (2MB)
-            if ($thumbnail['size'] < 2_000_000) {
-                move_uploaded_file($thumbnail_tmp_name, $thumbnail_destination_path);
+            if ($thumbnail['size'] < 2000000) {
+                if (move_uploaded_file($thumbnail_tmp_name, $thumbnail_destination_path)) {
+                    // ! INSERT POST INTO DATABASE
+                    $query = "INSERT INTO posts (title, body, thumbnail, category_id, author_id, is_featured, date_time) VALUES (?, ?, ?, ?, ?, ?, NOW())";
+                    $stmt = mysqli_prepare($conn, $query);
+                    mysqli_stmt_bind_param($stmt, 'sssiis', $title, $body, $thumbnail_name, $category_id, $author_id, $is_featured);
+                    $result = mysqli_stmt_execute($stmt);
+
+                    if ($result) {
+                        $_SESSION['add-post-success'] = "Post added successfully";
+                        header("Location: " . Backend . "userdash.php");
+                        exit();
+                    } else {
+                        $_SESSION['add-post'] = "An error occurred";
+                    }
+                } else {
+                    $_SESSION['add-post'] = "Failed to upload thumbnail";
+                }
             } else {
-                $_SESSION['add-post'] = 'File is too big';
+                $_SESSION['add-post'] = "Image size is too large. Should be less than 2MB";
             }
         } else {
-            $_SESSION['add-post'] = 'File must be an image';
+            $_SESSION['add-post'] = "File should be an image";
         }
     }
 
-    // ! REDIRECT BACK WITH FORM DATA TO ADD POST PAGE IF THERE IS ANY PROBLEM
+    // ! REDIRECT BACK TO ADD POST IF THERE IS AN ERROR
     if (isset($_SESSION['add-post'])) {
         $_SESSION['add-post-data'] = $_POST;
-        header('Location: ' . Backend . 'add-post.php');
-        die();
-    } else {
-        // ! SET  IS_FEATURED TO 0 IF USER IS NOT ADMIN
-
-        if ($is_featured == 1) {
-            $zero_all_is_featured_query = "UPDATE posts SET is_featured = 0";
-            $zero_all_is_featured_result = mysqli_query($conn, $zero_all_is_featured_query);
-        }
-
-        // ! INSERT QUERY
-
-        $query = "INSERT INTO posts (title, body,thumbnail, category_id, author_id, is_featured) VALUES ('$title', '$body', '$thumbnail_name', $category_id, $author_id, $is_featured)";
-        $result = mysqli_query($conn, $query);
-        if ($result) {
-            $_SESSION['add-post'] = 'Post added successfully';
-            header('Location: ' . Backend . 'dashboard.php');
-            die();
-        }
+        header('Location: ' . Backend . 'add-post-user.php');
+        exit();
     }
+} else {
+    // Redirect to add post form if the form was not submitted
+    header("Location: " . Backend . "add-post-user.php");
+    exit();
 }
-
-header('Location: ' . Backend . 'add-post.php');
-die();
