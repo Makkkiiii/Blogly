@@ -34,11 +34,11 @@
         <article>
             <h4>Blog</h4>
             <ul>
-                <li><a href="">Safety</a></li>
-                <li><a href="">Repair</a></li>
-                <li><a href="">Recent</a></li>
-                <li><a href="">Popular</a></li>
-                <li><a href="">Categories</a></li>
+                <li><a href="<?= Frontend ?>blog.php">Safety</a></li>
+                <li><a href="<?= Frontend ?>blog.php">Repair</a></li>
+                <li><a href="<?= Frontend ?>blog.php">Recent</a></li>
+                <li><a href="<?= Frontend ?>blog.php">Popular</a></li>
+                <li><a href="<?= Frontend ?>blog.php">Categories</a></li>
             </ul>
         </article>
         <article>
