@@ -108,3 +108,8 @@ Follow the given instructions inside the program
 ![image](https://github.com/Makkkiiii/Password-Generator/assets/148240694/cb19d6e4-0c03-4c73-839a-b5f126ceaa7c) ![96018_xampp_icon](https://github.com/user-attachments/assets/9aa8bacd-09d3-499c-9a61-e1c5a950ba4a)
 
 This web application was written in **Visual Studio Code** and **XAMPP** was used for Hosting.
+
+## DEMO
+
+https://github.com/user-attachments/assets/1ad6d1a6-f95a-4c59-94ab-039e31b4ceda
+
