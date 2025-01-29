@@ -1,4 +1,6 @@
 <?php
+
+// ! PATH TO CONNECTION AND SESSION START
 require '/Xampp/htdocs/Blogly/Config/database.php';
 session_start();
 

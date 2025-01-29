@@ -12,6 +12,8 @@ Introduction to Web Development and Database Systems - **Lecturer**: Dhirendra B
 
 Blogly - 6th January (2nd Semester)
 
+**ALL THE CONNECTION, SESSION_START() AND PATHS COMMANDS ARE INCLUDED INSIDE THE "CONFIG" FOLDER. PLEASE GO THROUGH IT.**
+
 ## About
 
 A **Blog Web Application** made using:
@@ -33,7 +35,6 @@ A **Blog Web Application** made using:
 - User-Friendly Editor
 - Categories and Tags
 - Search and Filters
-- Comments and Engagement
 - User Accounts and Profiles
 
 ## Getting Started

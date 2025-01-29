@@ -1,6 +1,13 @@
 <?php
 require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
 
+// ! FETCHING CATEGORIES
+
+$query = "SELECT * FROM categories";
+$result = mysqli_query($conn, $query);
+$categories = $result;
+
+
 ?>
 
 
@@ -12,28 +19,25 @@ require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
         <div class="alert_message error">
             <p>This is an error message.</p>
         </div>
-        <form action="" enctype="multipart/form-data">
-            <input type="text" placeholder="Title">
-            <select>
-                <option value="1">Travel</option>
-                <option value="2">Photography</option>
-                <option value="3">Lifestyle</option>
-                <option value="4">Fashion</option>
-                <option value="5">Food</option>
-                <option value="6">Technology</option>
-                <option value="7">Business</option>
-                <option value="8">Sports</option>
+        <form action="<?= LOGICS ?>add-post-logic.php" enctype="multipart/form-data" method="POST">
+            <input type="text" name="title" placeholder="Title">
+            <select name="category">
+                <?php while ($category = mysqli_fetch_assoc($categories)): ?>
+                    <option value="<?= $category['id'] ?>"><?= $category['title'] ?></option>
+                <?php endwhile; ?>
             </select>
             <textarea rows="10" placeholder="Share Your Story"></textarea>
-            <div class="form_control inline">
-                <input type="checkbox" id="is_featured" checked>
-                <label for="is_featured">Featured</label>
-            </div>
+            <?php if (isset($_SESSION['user_is_admin'])) : ?>
+                <div class="form_control inline">
+                    <input type="checkbox" id="is_featured" name=" featured" value="1" id="is_featured" checked>
+                    <label for="is_featured">Featured</label>
+                </div>
+            <?php endif; ?>
             <div class="form_control">
                 <label for="thumbnail">Add Thumbnail</label>
-                <input type="file" id="thumbnail" accept="image/*">
+                <input type="file" id="thumbnail" name="thumbnail" accept="image/*">
             </div>
-            <button type="submit" class="btn">Add Posts</button>
+            <button type="submit" name="submit" class="btn">Add Posts</button>
         </form>
     </div>
 </section>
