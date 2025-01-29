@@ -2,6 +2,11 @@
 
 ![Bloglyy](https://github.com/user-attachments/assets/f7e03167-0278-4592-9957-ceee138d3cb6)
 
+## Homepage
+
+![Homepage](https://github.com/user-attachments/assets/8dcdff80-7a05-4932-8ed6-7f7a949af461)
+
+
 ## Overview
 
 Softwarica College of IT and E-Commerce
