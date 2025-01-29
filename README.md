@@ -4,7 +4,8 @@
 
 ## Homepage
 
-![Homepage](https://github.com/user-attachments/assets/8dcdff80-7a05-4932-8ed6-7f7a949af461)
+![Homepage](https://github.com/user-attachments/assets/c82ae9fa-5db6-4ab2-a3ac-131ddb3bac02)
+
 
 
 ## Overview
