@@ -12,7 +12,7 @@ Introduction to Web Development and Database Systems - **Lecturer**: Dhirendra B
 
 Blogly - 6th January (2nd Semester)
 
-<span style="color:green;">**ALL THE CONNECTION, <span style="color:red;">CONFIG</span> AND PATHS COMMANDS ARE INCLUDED INSIDE THE "CONFIG" FOLDER. PLEASE GO THROUGH IT.**</span>
+**ALL THE CONNECTION, CONFIG AND PATHS COMMANDS ARE INCLUDED INSIDE THE "CONFIG" FOLDER. PLEASE GO THROUGH IT.**
 
 ## About
 
