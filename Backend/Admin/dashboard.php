@@ -18,6 +18,29 @@ $posts = mysqli_query($conn, $query);
                 ?>
             </p>
         </div>
+    <?php elseif (isset($_SESSION['edit-post'])) : ?>
+        <div class="alert_message success container">
+            <p>
+                <?= $_SESSION['edit-post'];
+                unset($_SESSION['edit-post']);
+                ?>
+            </p>
+        </div>
+    <?php endif; ?>
+    <?php if (isset($_SESSION['delete-post-success'])): ?>
+        <div class="alert_message success container">
+            <p>
+                <?= $_SESSION['delete-post-success'];
+                unset($_SESSION['delete-post-success']); ?>
+            </p>
+        </div>
+    <?php elseif (isset($_SESSION['delete-post-error'])): ?>
+        <div class="alert_message error container">
+            <p>
+                <?= $_SESSION['delete-post-error'];
+                unset($_SESSION['delete-post-error']); ?>
+            </p>
+        </div>
     <?php endif; ?>
     <div class="container dashboard_container">
         <button id="show_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-right-b"></i></button>
@@ -89,7 +112,7 @@ $posts = mysqli_query($conn, $query);
                                 <td><?= $post['title'] ?></td>
                                 <td><?= $category['title'] ?></td>
                                 <td><a href="<?= Backend ?>edit-post.php?id=<?= $post['id'] ?>" class="btn sm">Edit</a></td>
-                                <td><a href="<?= Backend ?>delete-category.php?id=<?= $post['id'] ?>" class="btn sm danger">Delete</a></td>
+                                <td><a href="<?= Backend ?>delete-post.php?id=<?= $post['id'] ?>" class="btn sm danger">Delete</a></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>

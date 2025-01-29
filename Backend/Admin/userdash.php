@@ -33,7 +33,7 @@ $posts = mysqli_query($conn, $query);
                     </a>
                 </li>
                 <li>
-                    <a href="<?= Backend ?>edit-post.php" class="active">
+                    <a href="<?= Backend ?>edit-post-user.php" class="active">
                         <i class="uil uil-setting"></i>
                         <h5>Manage Posts</h5>
                     </a>
@@ -66,8 +66,8 @@ $posts = mysqli_query($conn, $query);
                             <tr>
                                 <td><?= $post['title'] ?></td>
                                 <td><?= $category['title'] ?></td>
-                                <td><a href="<?= Backend ?>edit-post.php?id=<?= $post['id'] ?>" class="btn sm">Edit</a></td>
-                                <td><a href="<?= Backend ?>delete-category.php?id=<?= $post['id'] ?>" class="btn sm danger">Delete</a></td>
+                                <td><a href="<?= Backend ?>edit-post-user.php?id=<?= $post['id'] ?>" class="btn sm">Edit</a></td>
+                                <td><a href="<?= Backend ?>delete-post-user.php?id=<?= $post['id'] ?>" class="btn sm danger">Delete</a></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>

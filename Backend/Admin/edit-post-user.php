@@ -30,8 +30,16 @@ if (isset($_GET['id'])) {
                 <p><?php echo $_SESSION['edit-post'];
                     unset($_SESSION['edit-post']); ?></p>
             </div>
+        <?php elseif (isset($_SESSION['edit-post'])) : ?>
+            <div class="alert_message success container">
+                <p>
+                    <?= $_SESSION['edit-post'];
+                    unset($_SESSION['edit-post']);
+                    ?>
+                </p>
+            </div>
         <?php endif; ?>
-        <form action="<?= LOGICS ?>edit-post-logic.php" enctype="multipart/form-data" method="POST">
+        <form action="<?= LOGICS ?>edit-post-user-logic.php" enctype="multipart/form-data" method="POST">
             <input type="hidden" name="id" value="<?= $post['id'] ?>">
             <input type="hidden" name="previous_thumbnail" value="<?= $post['thumbnail'] ?>">
             <input type="text" name="title" placeholder="Title" value="<?= htmlspecialchars($post['title']) ?>">
@@ -41,10 +49,7 @@ if (isset($_GET['id'])) {
                 <?php endwhile; ?>
             </select>
             <textarea rows="10" name="body" placeholder="Share Your Story"><?= htmlspecialchars($post['body']) ?></textarea>
-            <div class="form_control inline">
-                <input type="checkbox" id="is_featured" name="is_featured" value="1" <?= $post['is_featured'] ? 'checked' : '' ?>>
-                <label for="is_featured">Featured</label>
-            </div>
+
             <div class="form_control">
                 <label for="thumbnail">Change Thumbnail</label>
                 <input type="file" id="thumbnail" name="thumbnail">
