@@ -12,7 +12,7 @@ Introduction to Web Development and Database Systems - **Lecturer**: Dhirendra B
 
 Blogly - 6th January (2nd Semester)
 
-<span style="color: green;">All the connection, session_start(), and paths commands are included inside the</span> <span style="color: red;">CONFIG</span> <span style="color: green;">folder. Please go through it.</span>
+<span style="color:green;">**ALL THE CONNECTION, <span style="color:red;">CONFIG</span> AND PATHS COMMANDS ARE INCLUDED INSIDE THE "CONFIG" FOLDER. PLEASE GO THROUGH IT.**</span>
 
 ## About
 
