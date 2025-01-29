@@ -6,8 +6,6 @@
 
 ![Homepage](https://github.com/user-attachments/assets/c82ae9fa-5db6-4ab2-a3ac-131ddb3bac02)
 
-
-
 ## Overview
 
 Softwarica College of IT and E-Commerce
@@ -18,9 +16,7 @@ Introduction to Web Development and Database Systems - **Lecturer**: Dhirendra B
 
 Blogly - 6th January (2nd Semester)
 
-**ALL THE CONNECTION, CONFIG AND PATHS COMMANDS ARE INCLUDED INSIDE THE "CONFIG" FOLDER.**
-
-**!!!! DEMO OF THE WEB APPLICATION IS AT THE END OF THE README PAGE.**
+**ALL THE CONNECTION, CONFIG AND PATHS COMMANDS ARE INCLUDED INSIDE THE "CONFIG" FOLDER. DEMO OF THE WEB APPLICATION IS AT THE END OF THE README PAGE.**
 
 ## About
 
@@ -114,4 +110,3 @@ This web application was written in **Visual Studio Code** and **XAMPP** was use
 ## DEMO
 
 https://github.com/user-attachments/assets/1ad6d1a6-f95a-4c59-94ab-039e31b4ceda
-
