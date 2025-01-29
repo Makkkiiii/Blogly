@@ -6,8 +6,6 @@ require '/Xampp/htdocs/Blogly/Backend/Admin/Partials/header.php';
 $query = "SELECT * FROM categories";
 $result = mysqli_query($conn, $query);
 $categories = $result;
-
-
 ?>
 
 
@@ -16,9 +14,12 @@ $categories = $result;
         <h2>
             Add Post
         </h2>
-        <div class="alert_message error">
-            <p>This is an error message.</p>
-        </div>
+        <?php if (isset($_SESSION['add-post'])): ?>
+            <div class="alert_message error">
+                <p><?php echo $_SESSION['add-post'];
+                    unset($_SESSION['add-post']); ?></p>
+            </div>
+        <?php endif; ?>
         <form action="<?= LOGICS ?>add-post-logic.php" enctype="multipart/form-data" method="POST">
             <input type="text" name="title" placeholder="Title">
             <select name="category">
@@ -26,16 +27,16 @@ $categories = $result;
                     <option value="<?= $category['id'] ?>"><?= $category['title'] ?></option>
                 <?php endwhile; ?>
             </select>
-            <textarea rows="10" placeholder="Share Your Story"></textarea>
+            <textarea rows="10" name="body" placeholder="Share Your Story"></textarea>
             <?php if (isset($_SESSION['user_is_admin'])) : ?>
                 <div class="form_control inline">
-                    <input type="checkbox" id="is_featured" name=" featured" value="1" id="is_featured" checked>
+                    <input type="checkbox" id="is_featured" name="id_featured" value="1" id="is_featured" checked>
                     <label for="is_featured">Featured</label>
                 </div>
             <?php endif; ?>
             <div class="form_control">
                 <label for="thumbnail">Add Thumbnail</label>
-                <input type="file" id="thumbnail" name="thumbnail" accept="image/*">
+                <input type="file" id="thumbnail" name="thumbnail">
             </div>
             <button type="submit" name="submit" class="btn">Add Posts</button>
         </form>
