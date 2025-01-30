@@ -120,6 +120,8 @@ This web application was written in **Visual Studio Code** and **XAMPP** was use
 
 Youtube: https://youtu.be/yRqx9ml9ijA
 
+Youtube (Uncut video): https://youtu.be/TPIlaehRYPw 
+
 Drive Link: https://drive.google.com/file/d/19MtXq7RmI2gZmvEf2_xDsU9i5EU3tD78/view?usp=sharing
 
 ## DEMO
