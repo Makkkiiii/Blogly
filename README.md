@@ -87,7 +87,16 @@ Go to the directory where the folder was cloned.
 cd Denish_Maharjan_CW1_Blogly
 ```
 
-## 3. FOR MAC
+### 3. Setting Up server
+
+Go to the directory called 'DB'
+
+```
+Copy the 'Table' folder inside your Xampp -> mysql
+Then copy and paste the SQL query
+```
+
+## 4. FOR MAC
 
 ![image](https://github.com/Makkkiiii/Password-Generator/assets/148240694/1c970412-db98-4f30-a1bf-b87ae00f8ce3)
 
