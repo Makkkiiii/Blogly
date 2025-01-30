@@ -116,6 +116,12 @@ Follow the given instructions inside the program
 
 This web application was written in **Visual Studio Code** and **XAMPP** was used for Hosting.
 
+## VIDEO Links
+
+Youtube: https://youtu.be/yRqx9ml9ijA
+
+Drive Link: https://drive.google.com/file/d/19MtXq7RmI2gZmvEf2_xDsU9i5EU3tD78/view?usp=sharing
+
 ## DEMO
 
 https://github.com/user-attachments/assets/1ad6d1a6-f95a-4c59-94ab-039e31b4ceda
