@@ -23,7 +23,7 @@ if (isset($_GET['id'])) {
             unlink($avatar_path);
         }
 
-        $thumbnails_query = "SELECT * FROM posts WHERE user_id = $id";
+        $thumbnails_query = "SELECT * FROM posts WHERE id = $id";
         $thumbnails_result = mysqli_query($conn, $thumbnails_query);
         if (mysqli_num_rows($thumbnails_result) > 0) {
             while ($thumbnail = mysqli_fetch_assoc($thumbnails_result)) {
