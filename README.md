@@ -31,11 +31,13 @@ A **Blog Web Application** made using:
 
 **Server Side Application:** _PHP_
 
-![image](https://github.com/user-attachments/assets/178d2913-e9cd-4669-8dc2-90cd15e5285d)
+![php-programming-language-icon](https://github.com/user-attachments/assets/64b49a84-cd2d-43be-8e52-0b4a050e5e9a)
+
 
 **Backend:** _MySQL_
 
-![image](https://github.com/user-attachments/assets/ccfc349e-b9ad-4f1e-b941-13f1f196450e)
+![mysql-icon](https://github.com/user-attachments/assets/8c256ce2-39ef-42a5-bfec-fa624699f038)
+
 
 ## Features
 
