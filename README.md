@@ -116,7 +116,7 @@ Follow the given instructions inside the program
 
 ## Tools Used
 
-![image](https://github.com/Makkkiiii/Password-Generator/assets/148240694/cb19d6e4-0c03-4c73-839a-b5f126ceaa7c)     ![3012ecae-2014-40a4-af97-1ccab779daf0_removalai_preview](https://github.com/user-attachments/assets/96d7c11a-6bf7-473f-84ce-c2bf1f58d302)
+![image](https://github.com/Makkkiiii/Password-Generator/assets/148240694/cb19d6e4-0c03-4c73-839a-b5f126ceaa7c)     ![96018_xampp_icon (1)](https://github.com/user-attachments/assets/56e6d77e-8341-4f06-8b8b-b2d9658d0732)
 
 
 This web application was written in **Visual Studio Code** and **XAMPP** was used for Hosting.
