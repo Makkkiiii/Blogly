@@ -24,7 +24,10 @@ A **Blog Web Application** made using:
 
 **Front End:** _HTML, CSS & Javascript_
 
-![image](https://github.com/user-attachments/assets/c0b81a69-447c-4001-a5d4-d25fe4344eb4) ![image](https://github.com/user-attachments/assets/41e511e1-1b87-4e5d-8fd6-ff1300532c25) ![image](https://github.com/user-attachments/assets/a7c875ba-aac5-48fd-beb6-c6e8fee40cd4)
+![html-icon](https://github.com/user-attachments/assets/93a48e04-2f39-4781-8c68-7131ebec41a8)            ![css-icon](https://github.com/user-attachments/assets/5660344a-4d38-4e32-b1cf-5c516c3e6c42)       ![javascript-programming-language-icon](https://github.com/user-attachments/assets/b35da766-0c36-4796-87d7-e2c80180ca2d)
+
+
+
 
 **Server Side Application:** _PHP_
 
