@@ -54,7 +54,6 @@ You can compile the source code or use the pre-compiled executable file to start
 
 The **Blogly** Web Application is designed to simplify blogging by managing posts, categories, tags, and user interactions. Users can register, write, and publish blogs, explore content by categories or tags, and engage with other users through comments and likes. Admins can manage user accounts, moderate content, and generate analytics on user activity. The system streamlines blog creation with a user-friendly editor, provides efficient content organization, and offers real-time insights to improve user engagement and platform performance.
 
-![image](https://github.com/user-attachments/assets/dc46eeac-6b37-4156-9d4f-17889caa8b7e) ![image](https://github.com/user-attachments/assets/a65164e7-1a36-43a4-aca9-da8c16ec6f56) ![image](https://github.com/user-attachments/assets/c3ef27f3-38ed-40f1-9fb7-510652aaac3d) ![image](https://github.com/user-attachments/assets/f0e32df5-00c8-4bdc-8f64-8abcc46d18b5)
 
 # Installations
 
@@ -117,7 +116,8 @@ Follow the given instructions inside the program
 
 ## Tools Used
 
-![image](https://github.com/Makkkiiii/Password-Generator/assets/148240694/cb19d6e4-0c03-4c73-839a-b5f126ceaa7c) ![96018_xampp_icon](https://github.com/user-attachments/assets/9aa8bacd-09d3-499c-9a61-e1c5a950ba4a)
+![image](https://github.com/Makkkiiii/Password-Generator/assets/148240694/cb19d6e4-0c03-4c73-839a-b5f126ceaa7c)     ![3012ecae-2014-40a4-af97-1ccab779daf0_removalai_preview](https://github.com/user-attachments/assets/96d7c11a-6bf7-473f-84ce-c2bf1f58d302)
+
 
 This web application was written in **Visual Studio Code** and **XAMPP** was used for Hosting.
 
